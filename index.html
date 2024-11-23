@@ -2,24 +2,33 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXOTICA</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EXOTICA</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
-<body>
-    <exotica-header></exotica-header>
+<body id="body">
+	<exotica-header></exotica-header>
 
-    <div>
-        <h1 style="text-align: center; margin: 3rem;">EXOTICA</h1>
-        <p style="text-align: center;">Sklep z egzotycznymi zwierzętami.</p>
-    </div>
+	<main>
+		<div class="title-banner">
+			<h1 style="text-align: center;">EXOTICA</h1>
+			<p style="text-align: center;" title="i nie tylko...">Sklep z egzotycznymi zwierzętami.</p>
+		</div>
+	</main>
 
-    <exotica-footer></exotica-footer>
+	<exotica-footer></exotica-footer>
 
-    <script src="header-footer-loader.js"></script>
+	<!-- PAGE LOADER BEGIN -->
+	<!-- <div id="loader">
+		<span class="loader"></span>
+	</div> -->
+	<!-- PAGE LOADER END -->
+
+	<script src="header-footer-loader.js"></script>
+	<script src="core.js"></script>
 </body>
 
 </html>

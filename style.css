@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&display=swap');
+
 * {
     margin: 0;
 }
@@ -5,7 +7,8 @@
 body {
     width: 100%;
     min-height: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+	font-family: 'Geist', sans-serif;
     background-color: #e2eee2;
 }
 
@@ -43,7 +46,46 @@ li a:hover {
     transition-duration: 250ms;
 }
 
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 110px);
+}
 
+.title-banner {
+	background: url('https://www.wideopenspaces.com/wp-content/uploads/sites/3/2020/09/Exotic-Pets-Where-They-Can-Be-Owned.png?fit=1200%2C800') #2b2d4296;
+	background-size: cover;
+	background-position: 0;
+	background-blend-mode: multiply;
+	width: 60rem;
+	height: 20rem;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.title-banner h1 {
+	color: white;
+	letter-spacing: 6px;
+	font-size: 5rem;
+	text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
+}
+
+.title-banner p
+{
+	 color: white;
+	 font-size: 2rem;
+	 text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
+}
+
+h1 {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 3rem;
+}
 
 
 footer {
@@ -177,3 +219,30 @@ footer {
 }
 
 /*#endregion*/
+
+/* PAGE LOADER STYLES */
+/* #loader {
+	background-color: #ffffff;
+	width: 98vw; height: 96vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2vw;
+}
+
+.loader {
+	width: 36px;
+	height: 36px;
+	border: 2px solid #000000;
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: loader 1s linear infinite;
+}
+
+@keyframes loader
+{
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+} */

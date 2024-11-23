@@ -3,7 +3,7 @@ class ExoticaHeader extends HTMLElement {
     this.innerHTML = `
         <header>
         <ul>
-            <li><a href="index.html">Strona głowna</a></li>
+            <li><a href="index.html">Strona główna</a></li>
             <li><a href="sklep.html">Płazy</a></li>
             <li><a href="sklep.html">Gady</a></li>
             <li><a href="sklep.html">Stawonogi</a></li>
