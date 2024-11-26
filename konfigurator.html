@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Konfigurator | EXOTICA</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="konfigurator.css">
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="load-theme.js"></script>
+</head>
+
+<body id="body">
+	<exotica-header></exotica-header>
+
+	<div class="content centered-content">
+
+		<div style="text-align: center; margin: 4rem;">
+			<h1>KONFIGURATOR TERRARIUM</h1>
+			<p><i>Zaprojektuj swoje własne terrarium, w kilku prostych krokach</i></p>
+		</div>
+
+		<div class="cfg-container">
+			<div class="cfg-options">
+				<label for="text_grawer">Tekst do wygrawerowania na szybie przedniej</label><br>
+				<input type="text" name="text_grawer" id="text_grawer"><br><br>
+
+				<span>Rozmiar terrarium</span><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_s" value="SMALL">
+				<label for="rozmiar_s">Małe (?? x ?? cm)</label><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_m" value="MEDIUM">
+				<label for="rozmiar_m">Średnie (?? x ?? cm)</label><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_l" value="LARGE">
+				<label for="rozmiar_l">Duże (?? x ?? cm)</label><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_xl" value="EXTRALARGE">
+				<label for="rozmiar_xl">Bardzo duże (?? x ?? cm)</label><br><br>
+			</div>
+			<div class="cfg-preview">
+				<span><i>tutaj się pokaże twoje terrarium... tylko musisz coś dodać</i></span>
+			</div>
+		</div>
+
+	</div>
+
+	<exotica-footer></exotica-footer>
+
+	<script src="header-footer-loader.js"></script>
+	<script src="core.js"></script>
+	<script src="dark-mode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.cfg-container
+{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	width: 90vw;
+	height: 50vh;
+}
+
+.cfg-options
+{
+	flex: 1;
+	height: 100%;
+}
+
+.cfg-options input[type=text]
+{
+	width: 50%;
+	height: 40px;
+	padding: 0 10px;
+}
+
+.cfg-preview
+{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--secondary);
+	height: 100%;
+	border: 1px solid var(--accent);
+	border-radius: 4px;
+	user-select: none;
+}
