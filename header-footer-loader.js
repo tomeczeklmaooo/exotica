@@ -26,7 +26,7 @@ class ExoticaHeader extends HTMLElement {
                     <li><a href="sklep.html">Gady</a></li>
                     <li><a href="sklep.html">Stawonogi</a></li>
                     <li><a href="sklep.html">Ryby</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="#" id="toggle-cart">Koszyk</a></li>
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                 </span>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -47,5 +47,22 @@ class ExoticaFooter extends HTMLElement {
   }
 }
 
+class ExoticaCart extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+        <aside id="cart-menu">
+        <h2>Koszyk</h2>
+        <div id="cart-items"></div>
+        <div id="cart-summary">
+          <p>Razem: <span id="cart-total">0.00</span> PLN</p>
+          <input type="text" id="discount-code" placeholder="Kod Rabatowy" />
+        </div>
+        <button id="checkout-button">Przejdź do płatności</button>
+        </aside>
+    `;
+  }
+}
+
 customElements.define("exotica-header", ExoticaHeader);
 customElements.define("exotica-footer", ExoticaFooter);
+customElements.define("exotica-cart", ExoticaCart);
