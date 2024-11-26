@@ -1,90 +1,258 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&display=swap');
 
+
+
+:root[data-theme="light"] {
+    --text: #0d140b;
+    --text-inverted: #edf4eb;
+    --background: #ebf3e8;
+    --primary: #3d602e;
+    --secondary: #9ecc8e;
+    --accent: #60a244;
+
+    --nav-background: #0f170c;
+    --nav-text: #edf4eb;
+}
+
+:root[data-theme="dark"] {
+    --text: #edf4eb;
+    --text-inverted: #0d140b;
+    --background: #050a04;
+    --primary: #aed19f;
+    --secondary: #427133;
+    --accent: #79bb5d;
+    --nav-background: #172013;
+    --nav-text: #edf4eb;
+}
+
 * {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body {
-    width: 100%;
-    min-height: 100%;
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-	font-family: 'Geist', sans-serif;
-    background-color: #e2eee2;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    /*transition: background 0.1s linear;*/
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: #111;
-}
-
-ul {
-    list-style-type: none;
+html,
+body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #111;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-li {
-    float: left;
+.content {
+    flex: 1;
+  }
+
+
+
+
+.theme-checkbox {
+    opacity: 0;
+    position: absolute;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+.theme-checkbox-label {
+    background-color: var(--secondary);
+    width: 50px;
+    height: 20px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f1c40f;
+}
+
+.theme-checkbox-label .theme-ball {
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.theme-checkbox:checked+.theme-checkbox-label .theme-ball {
+    transform: translateX(27px);
+}
+
+
+
+
+
+/*#region Nav Bar*/
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--nav-background);
+    padding: 12px 20px;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    padding-left: 30px;
+}
+
+.menu li a {
+    display: inline-block;
     text-decoration: none;
-    transition-duration: 250ms;
+    color: var(--nav-text);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
 }
 
-li a:hover {
-    background-color: #59BE60;
-    transition-duration: 250ms;
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--nav-text);
+    transition: 0.15s ease-in-out;
 }
+
+.menu li a:hover:after {
+    width: 100%;
+}
+
+.open-menu,
+.close-menu {
+    position: absolute;
+    color: var(--nav-text);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width: 610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--nav-background);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .menu li {
+        margin-top: 40px;
+    }
+
+    .menu li a {
+        padding: 10px;
+    }
+
+    .open-menu,
+    .close-menu {
+        display: block;
+    }
+
+    #check:checked~.menu {
+        right: 0;
+    }
+}
+
+/*#endregion*/
+
+
+
+
 
 main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: calc(100vh - 110px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 110px);
 }
 
 .title-banner {
-	background: url('https://www.wideopenspaces.com/wp-content/uploads/sites/3/2020/09/Exotic-Pets-Where-They-Can-Be-Owned.png?fit=1200%2C800') #2b2d4296;
-	background-size: cover;
-	background-position: 0;
-	background-blend-mode: multiply;
-	width: 60rem;
-	height: 20rem;
-	border-radius: 4px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	gap: 30px;
+    background: url('https://www.wideopenspaces.com/wp-content/uploads/sites/3/2020/09/Exotic-Pets-Where-They-Can-Be-Owned.png?fit=1200%2C800') #2b2d4296;
+    background-size: cover;
+    background-position: 0;
+    background-blend-mode: multiply;
+    width: 60rem;
+    height: 20rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .title-banner h1 {
-	color: white;
-	letter-spacing: 6px;
-	font-size: 5rem;
-	text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
+    color: white;
+    letter-spacing: 6px;
+    font-size: 5rem;
+    text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
 }
 
-.title-banner p
-{
-	 color: white;
-	 font-size: 2rem;
-	 text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
+.title-banner p {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
 }
 
 h1 {
-	font-family: 'DM Sans', sans-serif;
-	font-size: 3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3rem;
+
 }
 
 
@@ -92,10 +260,8 @@ footer {
     text-align: center;
     background-color: rgb(0, 0, 0);
     color: white;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
