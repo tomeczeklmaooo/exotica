@@ -1,0 +1,493 @@
+.shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*#region ShopCard*/
+/* Items Grid */
+
+.shop-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: white;
+}
+
+.shop-controls input,
+.shop-controls select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+.shop-controls input[type="text"] {
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("img/searchicon.png");
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+.shop-controls select {
+    width: 15%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 12px;
+}
+
+.shop-controls a {
+    color: white;
+    text-decoration: none;
+}
+
+.shop-controls a:hover {
+    text-decoration: underline;
+}
+
+/* Items Grid */
+#items-container {
+    /*display: grid;*/
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 1rem;
+    margin: 1.5rem;
+    width: 20rem;
+    background-color: var(--background);
+
+    border-radius: 1rem;
+
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.item-card:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+.item-card img {
+    overflow: hidden;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    height: 12rem;
+    background-color: var(--primary);
+
+    border-radius: 0.5rem;
+}
+
+.item-card button {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: auto;
+
+    padding: 0.5rem;
+    width: 50%;
+    background-color: var(--primary);
+
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #edf4eb;
+    text-wrap: nowrap;
+
+    border: 2px solid var(--primary);
+    border-radius: 1rem;
+}
+
+.item-card button:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+    transform: scale(.96);
+}
+
+/* Cart Sidebar */
+#cart-menu {
+    margin-right: 50px;
+    margin-top: 100px;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 300px;
+    height: 80%;
+    background-color: var(--secondary);
+    filter: brightness(120%);
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    border-radius: 25px;
+}
+
+#cart-menu.open {
+    right: 0;
+}
+
+#cart-items {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.cart-item .cart-details {
+    flex-grow: 1;
+}
+
+.cart-item .cart-controls button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-item .cart-controls button:hover {
+    color: var(--secondary);
+}
+
+#cart-summary {
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+
+#discount-code {
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("img/discounticon.png");
+    background-position: 5px 9px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+.checkout-button {
+    padding: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+    transform: scale(.96);
+}
+
+
+
+
+
+/* PŁATNOŚĆ */
+
+/* Body */
+.pay-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0px;
+    height: auto;
+}
+
+.pay-container hr {
+    height: 1px;
+    background-color: var(--primary);;
+    border: none;
+}
+
+.pay-card {
+    width: 400px;
+    background: var(--background);
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    
+}
+
+.pay-title {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid var(--primary);
+    ;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--text);
+}
+
+/* Cart */
+.pay-cart {
+    border-radius: 19px 19px 0px 0px;
+}
+
+.pay-cart .pay-steps {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.pay-cart .pay-steps .pay-step {
+    display: grid;
+    gap: 10px;
+}
+
+.pay-cart .pay-steps .pay-step span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.pay-cart .pay-steps .pay-step p {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Promo */
+.pay-promo form {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    gap: 10px;
+    padding: 0px;
+}
+
+.pay-input_field {
+    width: auto;
+    height: 36px;
+    padding: 0 0 0 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--primary);
+    background-color: var(--background);
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+    color: var(--text);
+}
+
+.pay-input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px var(--background);
+    filter: brightness(90%);
+}
+
+.pay-promo form button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 18px;
+    gap: 10px;
+    width: 100%;
+    height: 36px;
+    background: var(--primary);
+    box-shadow: 0px 0.5px 0.5px var(--primary-darker), 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+    border-radius: 5px;
+    border: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--text);
+}
+
+/* Checkout */
+.pay-payments .pay-details {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    padding: 0px;
+    gap: 5px;
+}
+
+.pay-payments .pay-details span:nth-child(odd) {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin: auto auto auto 0;
+}
+
+.pay-payments .pay-details span:nth-child(even) {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin: auto 0 auto auto;
+}
+
+.pay-checkout .pay-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 20px;
+    background-color: var(--secondary);
+}
+
+.pay-price {
+    position: relative;
+    font-size: 22px;
+    color: var(--text);
+    font-weight: 900;
+}
+
+.pay-checkout .pay-checkout-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 36px;
+    background: rgba(16, 86, 82, .55);
+    box-shadow: 0px 0.5px 0.5px var(--primary), 0px 1px 0.5px var(--primary);
+    ;
+    border-radius: 7px;
+    border: 1px solid #000000;
+    ;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.pay-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+
+
+/* From Uiverse.io by tranquoclong */
+.pay-info-inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    /*max-width: 190px;*/
+    position: relative;
+}
+
+.pay-info-inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid var(--secondary);
+    background-color: transparent;
+    border-radius: 15px;
+    width: 100%;
+    color: var(--text);
+}
+
+.pay-info-inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: var(--text);
+}
+
+.pay-info-inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: var(--background);
+}
+
+.pay-info-inputGroup :is(input:focus, input:valid) {
+    border-color: var(--primary);
+}
+
+.pay-info-input-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+    margin-bottom: -15px;
+}
+
+.pay-info-payment-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+.pay-info-payment-container div {
+    height: 55px;
+  background: var(--background);
+  filter: brightness(95%);
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-shadow: 0px 27px 5px rgba(0, 0, 0, 0.01), 0px 0px 3px rgba(0, 0, 0, 0.05), 0px 7px 7px rgba(0, 0, 0, 0.09), 0px 6px 6px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.pay-info-payment-container div img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.pay-info-payment-container div:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+    transform: scale(.96);
+}

@@ -22,6 +22,7 @@ class ExoticaHeader extends HTMLElement {
                     </label>
                   </div>
                     <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="konfigurator.html">Konfigurator</a></li>
                     <li><a href="sklep.html">Płazy</a></li>
                     <li><a href="sklep.html">Gady</a></li>
                     <li><a href="sklep.html">Stawonogi</a></li>
@@ -57,7 +58,7 @@ class ExoticaCart extends HTMLElement {
           <p>Razem: <span id="cart-total">0.00</span> PLN</p>
           <input type="text" id="discount-code" placeholder="Kod Rabatowy" />
         </div>
-        <button id="checkout-button">Przejdź do płatności</button>
+        <button id="checkout-button" class="checkout-button" onclick="location.href='platnosc.html';">Przejdź do płatności</button>
         </aside>
     `;
   }
