@@ -30,7 +30,22 @@
 	align-items: center;
 	color: var(--secondary);
 	height: 100%;
-	border: 1px solid var(--accent);
+	border: 1px solid var(--secondary);
 	border-radius: 4px;
 	user-select: none;
+}
+
+.cfg-preview div
+{
+	width: 50px;
+	height: 50px;
+	background: url('https://zoo-aquos.pl/userdata/public/gfx/33824/Repti-Planet-Terrarium-Szklane-Skladane-60x45x60cm.png');
+	background-size: contain;
+	background-position: center;
+}
+
+@keyframes terrarium_in
+{
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }

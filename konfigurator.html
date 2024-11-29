@@ -25,19 +25,37 @@
 		<div class="cfg-container">
 			<div class="cfg-options">
 				<label for="text_grawer">Tekst do wygrawerowania na szybie przedniej</label><br>
-				<input type="text" name="text_grawer" id="text_grawer"><br><br>
+				<input type="text" name="text_grawer" id="text_grawer" onchange="generuj()"><br><br>
 
 				<span>Rozmiar terrarium</span><br>
-				<input type="radio" name="rozmiar_terrarium" id="rozmiar_s" value="SMALL">
-				<label for="rozmiar_s">Małe (?? x ?? cm)</label><br>
-				<input type="radio" name="rozmiar_terrarium" id="rozmiar_m" value="MEDIUM">
-				<label for="rozmiar_m">Średnie (?? x ?? cm)</label><br>
-				<input type="radio" name="rozmiar_terrarium" id="rozmiar_l" value="LARGE">
-				<label for="rozmiar_l">Duże (?? x ?? cm)</label><br>
-				<input type="radio" name="rozmiar_terrarium" id="rozmiar_xl" value="EXTRALARGE">
-				<label for="rozmiar_xl">Bardzo duże (?? x ?? cm)</label><br><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_s" value="SMALL" onchange="generuj()">
+				<label for="rozmiar_s">Małe (60 x 40 x 40 cm)</label><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_m" value="MEDIUM" onchange="generuj()">
+				<label for="rozmiar_m">Średnie (100 x 50 x 50 cm)</label><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_l" value="LARGE" onchange="generuj()">
+				<label for="rozmiar_l">Duże (150 x 80 x 80 cm)</label><br>
+				<input type="radio" name="rozmiar_terrarium" id="rozmiar_xl" value="EXTRALARGE" onchange="generuj()">
+				<label for="rozmiar_xl">Bardzo duże (200 x 100 x 100 cm)</label><br><br>
+
+				<label for="">Rodzaj terenu</label><br>
+				<select name="" id="">
+					<option selected>---</option>
+					<option value="">Kamienisty</option>
+					<option value="">Piaszczysty</option>
+					<option value="">Tropikalny</option>
+					<option value="">Mieszany</option>
+				</select><br><br>
+
+				<span>Dodatki</span><br>
+				<input type="checkbox" name="dodatek" id="d1" value="d1" onchange="generuj()"><label for="d1">dodatek 1</label><br>
+				<input type="checkbox" name="dodatek" id="d2" value="d2" onchange="generuj()"><label for="d2">dodatek 2</label><br>
+				<input type="checkbox" name="dodatek" id="d3" value="d3" onchange="generuj()"><label for="d3">dodatek 3</label><br>
+				<input type="checkbox" name="dodatek" id="d4" value="d4" onchange="generuj()"><label for="d4">dodatek 4</label><br>
+				<input type="checkbox" name="dodatek" id="d5" value="d5" onchange="generuj()"><label for="d5">dodatek 5</label><br>
+				<input type="checkbox" name="dodatek" id="d6" value="d6" onchange="generuj()"><label for="d6">dodatek 6</label><br>
+				<input type="checkbox" name="dodatek" id="d7" value="d7" onchange="generuj()"><label for="d7">dodatek 7</label><br>
 			</div>
-			<div class="cfg-preview">
+			<div class="cfg-preview" id="cfg-preview">
 				<span><i>tutaj się pokaże twoje terrarium... tylko musisz coś dodać</i></span>
 			</div>
 		</div>
@@ -49,6 +67,7 @@
 	<script src="header-footer-loader.js"></script>
 	<script src="core.js"></script>
 	<script src="dark-mode.js"></script>
+	<script src="konfigurator.js"></script>
 </body>
 
 </html>
