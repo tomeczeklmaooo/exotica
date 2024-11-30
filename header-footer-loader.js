@@ -23,7 +23,10 @@ class ExoticaHeader extends HTMLElement {
                     <li class="home"><a href="index.html"><i class="fa-solid fa-house fa-xl"></i></a></li>
                     <li><a href="konfigurator.html"><i class="fa-solid fa-sliders fa-xl"></i></a></li>
                     <li><a href="konto.html"><i class="fa-solid fa-user fa-xl"></i></a></li>
-                    <li><a href="#" id="toggle-cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></a></li>
+                    <li><a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                    <span class="cart-count" id="cart-count"></span>
+                    </li>
+
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                 </span>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -35,45 +38,45 @@ class ExoticaHeader extends HTMLElement {
               <span class="menu">
                 </div>
 
-                  <li><a href="#">Zwierzęta <i class="fas fa-caret-down"></i></a>
+                  <li><a href="sklep.html" onclick="changeCategory('Zwierzęta')">Zwierzęta <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
                           <li>
-                            <a href="#">Płazy <i class="fas fa-caret-right"></i></a>
+                            <a href="sklep.html" onclick="changeCategory('Płazy')">Płazy <i class="fas fa-caret-right"></i></a>
                             <div class="dropdown-menu-1">
                               <ul>
-                                <li><a href="#">Żaby</a></li>
-                                <li><a href="#">Salamandry</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Żaby')">Żaby</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Salamandry')">Salamandry</a></li>
                               </ul>
                             </div>
                           </li>
                           <li>
-                            <a href="#">Gady <i class="fas fa-caret-right"></i></a>
+                            <a href="sklep.html" onclick="changeCategory('Gady')">Gady <i class="fas fa-caret-right"></i></a>
                             <div class="dropdown-menu-1">
                               <ul>
-                                <li><a href="#">Jaszczurki</a></li>
-                                <li><a href="#">Węże</a></li>
-                                <li><a href="#">Żółwie</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Jaszczurki')">Jaszczurki</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Węże')">Węże</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Żółwie')">Żółwie</a></li>
                               </ul>
                             </div>
                           </li>
                           <li>
-                            <a href="#">Stawonogi <i class="fas fa-caret-right"></i></a>
+                            <a href="sklep.html" onclick="changeCategory('Stawonogi')">Stawonogi <i class="fas fa-caret-right"></i></a>
                             <div class="dropdown-menu-1">
                               <ul>
-                                <li><a href="#">Pająki</a></li>
-                                <li><a href="#">Skorpiony</a></li>
-                                <li><a href="#">Owady</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Pająki')">Pająki</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Skorpiony')">Skorpiony</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Owady')">Owady</a></li>
                               </ul>
                             </div>
                           </li>
                           <li>
-                            <a href="#">Ryby <i class="fas fa-caret-right"></i></a>
+                            <a href="sklep.html" onclick="changeCategory('Ryby')">Ryby <i class="fas fa-caret-right"></i></a>
                             <div class="dropdown-menu-1">
                               <ul>
-                                <li><a href="#">Słodkowodne</a></li>
-                                <li><a href="#">Morskie</a></li>
-                                <li><a href="#">Denne</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Słodkowodne')">Słodkowodne</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Morskie')">Morskie</a></li>
+                                <li><a href="sklep.html" onclick="changeCategory('Denne')">Denne</a></li>
                               </ul>
                             </div>
                           </li>
@@ -81,30 +84,30 @@ class ExoticaHeader extends HTMLElement {
                       </div>
                   </li>
 
-                  <li><a href="">Karma</a></li>
+                  <li><a href="sklep.html" onclick="changeCategory('Karma')">Karma</a></li>
 
-                  <li><a href="#">Terraria <i class="fas fa-caret-down"></i></a>
+                  <li><a href="sklep.html" onclick="changeCategory('Terraria')">Terraria <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
                           <li>
                             <a href="konfigurator.html"><i class="fa-solid fa-sliders"></i> Konfigurator</a>
                           </li>
                           <li>
-                            <a href="#">Terraria</a>
+                            <a href="sklep.html" onclick="changeCategory('Terraria')">Terraria</a>
                           </li>
                           <li>
-                            <a href="#">Akwaria</a>
+                            <a href="sklep.html" onclick="changeCategory('Akwaria')">Akwaria</a>
                           </li>
                           <li>
-                            <a href="#">Dekoracje</a>
+                            <a href="sklep.html" onclick="changeCategory('Dekoracje')">Dekoracje</a>
                           </li>
                           <li>
-                            <a href="#">Akcesoria</a>
+                            <a href="sklep.html" onclick="changeCategory('Akcesoria')">Akcesoria</a>
                           </li>
                         </ul>
                       </div>
                   </li>
-                  <li><a href="">Akcesoria</a></li>
+                  <li><a href="sklep.html" onclick="changeCategory('Akcesoria')">Akcesoria</a></li>
               </span>
               <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
           </ul>

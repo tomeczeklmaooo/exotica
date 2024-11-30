@@ -25,17 +25,44 @@
 }
 
 .shop-controls input[type="text"] {
-    width: 30%;
+    width: 25%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
     background-image: url("img/searchicon.png");
+    background-position: 3px 0px;
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 40px;
+}
+
+.shop-controls input[type=number] {
+    width: 4%;
+    min-width: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
     background-position: 5px 5px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 6px 6px 6px 6px;
 }
+
+.shop-controls button {
+    min-width: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    padding: 6px 6px 6px 6px;
+}
+
+
 
 .shop-controls select {
     width: 15%;
@@ -44,7 +71,7 @@
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    padding: 12px 20px 12px 12px;
+    padding: 10px 10px 10px 10px;
 }
 
 .shop-controls a {
@@ -233,6 +260,11 @@
     cursor: pointer;
     transform: scale(.96);
 }
+
+.cart-count {
+    color: var(--nav-text);
+}
+
 
 
 

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shop.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="load-theme.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -15,64 +18,69 @@
 <body>
     <exotica-header></exotica-header>
     <div class="content">
-    <div style="text-align: center; margin: 4rem;">
-        <h1>SKLEP</h1>
-    </div>
-    <!--
-    <div class="shop">
-        <div class="card">
-            <div class="image_container">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqY-7J3ljl5ML4kmp15LgAkVVW0YQ04udANQ&s"
-                    alt="frog" class="image">
-            </div>
-            <div class="title">
-                <span>Żaba</span>
-            </div>
-            <div class="size">
-                <span>Opis</span>
-            </div>
-            <div class="action">
-                <div class="price">
-                    <span>99.99 PLN</span>
-                </div>
-                <button class="cart-button">
-                    <svg class="cart-icon" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-                            stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                    <span>Dodaj do koszyka</span>
-                </button>
-            </div>
+        <div style="text-align: center; margin: 4rem;">
+            <h1>SKLEP</h1>
         </div>
 
-    </div>
-    -->
-
-    <div class="shop-controls">
-        <input type="text" id="search-bar" placeholder="Szukaj..." />
-        <select id="sort-options">
-          <option value="name-asc">Nazwa (A-Z)</option>
-          <option value="name-desc">Nazwa (Z-A)</option>
-          <option value="price-low">Cena (od najniższej)</option>
-          <option value="price-high">Cena (od najwyższej)</option>
-        </select>
-      </div>
-      
-      <main>
-        <div id="items-container"></div>
-      </main>
+        <div class="shop-controls">
+            <div id="filters">
+                <input type="text" id="search-bar" placeholder="Szukaj..." />
+                <select id="sort-options">
+                    <option value="name-asc">Nazwa (A-Z)</option>
+                    <option value="name-desc">Nazwa (Z-A)</option>
+                    <option value="price-low">Cena (od najniższej)</option>
+                    <option value="price-high">Cena (od najwyższej)</option>
+                </select>
+                <label for="category-filter">Kategoria:</label>
+                <select id="category-dropdown">
+                    <option value="">Wszystkie Kategorie</option>
+                    <option value="Gady">Gady</option>
+                    <option value="Płazy">Płazy</option>
+                    <option value="Bezkręgowce">Bezkręgowce</option>
+                    <option value="Ryby">Ryby</option>
+                    <option value="Żaby">Żaby</option>
+                    <option value="Salamandry">Salamandry</option>
+                    <option value="Jaszczurki">Jaszczurki</option>
+                    <option value="Węże">Węże</option>
+                    <option value="Żółwie">Żółwie</option>
+                    <option value="Pająki">Pająki</option>
+                    <option value="Skorpiony">Skorpiony</option>
+                    <option value="Owady">Owady</option>
+                    <option value="Słodkowodne">Słodkowodne</option>
+                    <option value="Morskie">Morskie</option>
+                    <option value="Denne">Denne</option>
+                    <option value="Karma">Karma</option>
+                    <option value="Terraria">Terraria</option>
+                    <option value="Akwaria">Akwaria</option>
+                    <option value="Dekoracje">Dekoracje</option>
+                    <option value="Akcesoria">Akcesoria</option>
+                </select>
+                
+                <label for="min-price">Min Cena:</label>
+                <input type="number" id="min-price" placeholder="0">
     
-      <exotica-cart></exotica-cart>
+                <label for="max-price">Max Cena:</label>
+                <input type="number" id="max-price" placeholder="100">
     
-      
+                <button id="apply-filters">Zastosuj Filtry</button>
+            </div>
+            
+        </div>
 
-    <exotica-footer></exotica-footer>
 
-    <script src="header-footer-loader.js"></script>
-    <script src="dark-mode.js"></script>
-    <script src="shop.js"></script>
+        <main>
+            <div id="items-container"></div>
+        </main>
+
+        <exotica-cart></exotica-cart>
+
+
+
+        <exotica-footer></exotica-footer>
+
+        <script src="header-footer-loader.js"></script>
+        <script src="dark-mode.js"></script>
+        <script src="shop.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,37 @@
+const categories = [
+  "Gady",
+  "Płazy",
+  "Stawonogi",
+  "Ryby",
+  "Żaby",
+  "Salamandry",
+  "Jaszczurki",
+  "Węże",
+  "Żółwie",
+  "Pająki",
+  "Skorpiony",
+  "Owady",
+  "Słodkowodne",
+  "Morskie",
+  "Denne",
+  "Karma",
+  "Terraria",
+  "Akwaria",
+  "Dekoracje",
+  "Akcesoria",
+];
 const items = [
   {
     id: 1,
-    name: "Żaba 1",
-    description: "Opis żaby",
+    name: "Żaba Strzałkowa",
+    description: "Kolorowy płaz tropikalny.",
     price: 219.99,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqY-7J3ljl5ML4kmp15LgAkVVW0YQ04udANQ&s",
     tags: [
-      "żaba",
+      "Żaby",
+      "Płazy",
+      "Zwierzęta",
       "zaba",
       "płaz",
       "plaz",
@@ -26,6 +50,9 @@ const items = [
     image:
       "https://www.rainforest-alliance.org/wp-content/uploads/2021/06/poison-dart-frog-thumb-1-scaled.jpg.optimal.jpg",
     tags: [
+      "Zwierzęta",
+      "Płazy",
+      "Żaby",
       "żaba",
       "zaba",
       "płaz",
@@ -45,6 +72,9 @@ const items = [
     image:
       "https://wp.inews.co.uk/wp-content/uploads/2022/08/SEI_117404634.jpg",
     tags: [
+      "Zwierzęta",
+      "Gady",
+      "Węże",
       "wąż",
       "waz",
       "jadowity",
@@ -58,46 +88,54 @@ const items = [
       "paski",
     ],
   },
-  // Add more items as needed
+  {
+    id: 5,
+    name: "Błazenek",
+    description: "Popularna ryba morska.",
+    price: 79.99,
+    image:
+      "https://reefguard.pl/wp-content/uploads/2016/10/Fotolia_110923756_XL-scaled.jpg",
+    tags: ["Ryby", "Zwierzęta"],
+  },
 ];
 
-// Cart array loaded from localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let selectedCategory = localStorage.getItem("selectedCategory") || "";
+let filters = { minPrice: 0, maxPrice: Infinity };
 
 const itemsContainer = document.getElementById("items-container");
-const cartMenu = document.getElementById("cart-menu");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
-const toggleCart = document.getElementById("toggle-cart");
-const searchBar = document.getElementById("search-bar");
-const sortOptions = document.getElementById("sort-options");
+const categoryDropdown = document.getElementById("category-dropdown");
+const cartIcon = document.getElementById("cart-icon");
+const cartCount = document.getElementById("cart-count");
 
-// Utility functions for cart persistence
-function saveCartToLocalStorage() {
-  localStorage.setItem("cart", JSON.stringify(cart));
+// Funkcja do zmiany kategorii z navbaru
+function changeCategory(category) {
+  localStorage.setItem("selectedCategory", category);
 }
 
-// Render Items
-function renderItems(filteredItems = items) {
-  if (itemsContainer) {
-    // Only render items if items-container exists
-    itemsContainer.innerHTML = "";
-    filteredItems.forEach((item) => {
-      const card = document.createElement("div");
-      card.classList.add("item-card");
-      card.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <h3>${item.name}</h3>
-          <p>${item.description}</p>
-          <p><strong>${item.price.toFixed(2)} PLN</strong></p>
-          <button onclick="addToCart(${item.id})">Dodaj do koszyka</button>
-        `;
-      itemsContainer.appendChild(card);
-    });
+// Zapisz i wyświetl wybraną kategorię
+function setCategory(category) {
+  selectedCategory = category;
+  localStorage.setItem("selectedCategory", category);
+  renderItems();
+}
+
+// Zaktualizuj liczbę produktów w koszyku
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  if (cartCount) {
+    if (count > 0) {
+      cartCount.textContent = count;
+      cartCount.style.display = "inline";
+    } else {
+      cartCount.style.display = "none";
+    }
   }
 }
 
-// Add to Cart
+// Dodaj produkt do koszyka
 function addToCart(id) {
   const item = items.find((i) => i.id === id);
   const existingItem = cart.find((c) => c.id === id);
@@ -108,9 +146,17 @@ function addToCart(id) {
   }
   saveCartToLocalStorage();
   renderCart();
+  updateCartCount();
+
+  // Informacja zwrotna na przycisku
+  const button = document.querySelector(`button[data-id="${id}"]`);
+  if (button) {
+    button.textContent = "Dodano!";
+    setTimeout(() => (button.textContent = "Dodaj do koszyka"), 1000);
+  }
 }
 
-// Remove from Cart
+// Usuń produkt z koszyka
 function removeFromCart(id) {
   const cartIndex = cart.findIndex((c) => c.id === id);
   if (cartIndex > -1) {
@@ -122,87 +168,101 @@ function removeFromCart(id) {
   }
   saveCartToLocalStorage();
   renderCart();
+  updateCartCount();
 }
 
-// Render Cart
-function renderCart() {
-  if (cartItems) {
-    // Only render cart if cart-items exists
-    cartItems.innerHTML = "";
-    let total = 0;
-
-    cart.forEach((item) => {
-      total += item.price * item.quantity;
-      const cartItem = document.createElement("div");
-      cartItem.classList.add("cart-item");
-      cartItem.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-          <div class="cart-details">
-            <p>${item.name}</p>
-            <p>${item.quantity} x ${item.price.toFixed(2)} PLN = ${(
-        item.price * item.quantity
-      ).toFixed(2)} PLN</p>
-          </div>
-          <div class="cart-controls">
-            <button onclick="addToCart(${item.id})">+</button>
-            <button onclick="removeFromCart(${item.id})">-</button>
-          </div>
-        `;
-      cartItems.appendChild(cartItem);
-    });
-
-    cartTotal.textContent = total.toFixed(2);
-  }
-}
-
-// Toggle Cart
-if (toggleCart) {
-  // Check if toggleCart exists before adding event listener
-  toggleCart.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (cartMenu) {
-      cartMenu.classList.toggle("open");
-    }
+// Wyświetl produkty na podstawie kategorii i filtrów
+function renderItems() {
+  if (!itemsContainer) return; // Sprawdz, czy jest element na stronie
+  const filteredItems = items.filter((item) => {
+    const matchesCategory =
+      !selectedCategory || item.tags.includes(selectedCategory);
+    const matchesPrice =
+      item.price >= filters.minPrice && item.price <= filters.maxPrice;
+    return matchesCategory && matchesPrice;
   });
+
+  itemsContainer.innerHTML = filteredItems
+    .map(
+      (item) => `
+      <div class="item-card">
+        <img src="${item.image}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+        <p><strong>${item.price.toFixed(2)} PLN</strong></p>
+        <button data-id="${item.id}" onclick="addToCart(${
+        item.id
+      })">Dodaj do koszyka</button>
+      </div>
+    `
+    )
+    .join("");
 }
 
-// Sort Items
-function sortItems(criteria) {
-  const sortedItems = [...items];
-  if (criteria === "name-asc") {
-    sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (criteria === "name-desc") {
-    sortedItems.sort((a, b) => b.name.localeCompare(a.name));
-  } else if (criteria === "price-low") {
-    sortedItems.sort((a, b) => a.price - b.price);
-  } else if (criteria === "price-high") {
-    sortedItems.sort((a, b) => b.price - a.price);
-  }
-  renderItems(sortedItems);
+// Wyświetl zawartość koszyka
+function renderCart() {
+  if (!cartItems || !cartTotal) return; // Sprawdz, czy jest element na stronie
+  cartItems.innerHTML = "";
+  let total = 0;
+  cart.forEach((item) => {
+    total += item.price * item.quantity;
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+        <div class="cart-details">
+          <p><strong>${item.name}</strong></p>
+          <p>${item.quantity} x ${item.price.toFixed(2)} PLN</p>
+        </div>
+        <div class="cart-controls">
+          <button onclick="addToCart(${item.id})">+</button>
+          <button onclick="removeFromCart(${item.id})">-</button>
+        </div>
+      </div>
+    `;
+  });
+  cartTotal.textContent = total.toFixed(2);
 }
 
-// Search Items
-function searchItems(query) {
-  const lowerQuery = query.toLowerCase();
-  const filteredItems = items.filter(
-    (item) =>
-      item.name.toLowerCase().includes(lowerQuery) ||
-      item.description.toLowerCase().includes(lowerQuery) ||
-      item.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
-  );
-  renderItems(filteredItems);
+// Zapisz koszyk w localStorage
+function saveCartToLocalStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Event Listeners
-if (searchBar) {
-  searchBar.addEventListener("input", (e) => searchItems(e.target.value));
-}
-if (sortOptions) {
-  sortOptions.addEventListener("change", (e) => sortItems(e.target.value));
-}
+// Zastosuj filtry cenowe
+document.getElementById("apply-filters")?.addEventListener("click", () => {
+  filters.minPrice =
+    parseFloat(document.getElementById("min-price").value) || 0;
+  filters.maxPrice =
+    parseFloat(document.getElementById("max-price").value) || Infinity;
+  renderItems();
+});
 
-// Initial Render
+// Obsługa zmiany kategorii w dropdownie na stronie sklepu
+categoryDropdown?.addEventListener("change", (e) => {
+  setCategory(e.target.value);
+});
+
+// Inicjalizacja strony
 document.addEventListener("DOMContentLoaded", () => {
   renderItems();
   renderCart();
+  updateCartCount();
+
+  // Ustaw wybraną kategorię w dropdownie na stronie sklepu
+  if (categoryDropdown) {
+    const storedCategory = localStorage.getItem("selectedCategory");
+    if (storedCategory) {
+      categoryDropdown.value = storedCategory; // Ustaw dropdown na wybraną kategorię
+      selectedCategory = storedCategory; // Ustaw kategorię w skrypcie
+    }
+  }
+});
+
+// Obsługa przełączania widoczności koszyka
+cartIcon?.addEventListener("click", (e) => {
+  e.preventDefault();
+  const cartMenu = document.getElementById("cart-menu");
+  if (cartMenu) {
+    cartMenu.classList.toggle("open");
+  }
 });
