@@ -67,7 +67,7 @@ body {
 }
 
 .theme-checkbox-label {
-  background-color: var(--secondary);
+  background-color: var(--primary-darker);
   width: 50px;
   height: 20px;
   border-radius: 50px;
@@ -80,27 +80,42 @@ body {
 }
 
 .fa-moon {
-  color: #f1c40f;
+  color: #ffbe0d;
 }
 
 .fa-sun {
-  color: #f1c40f;
+  color: #ffbe0d;
 }
 
 .theme-checkbox-label .theme-ball {
-  background-color: #fff;
+  background-color: var(--nav-background);
   width: 18px;
   height: 18px;
   position: absolute;
-  left: 2px;
+  left: 1.5px;
   top: 1px;
   border-radius: 50%;
   transition: transform 0.2s linear;
 }
 
-.theme-checkbox:checked + .theme-checkbox-label .theme-ball {
+.theme-checkbox:checked+.theme-checkbox-label .theme-ball {
   transform: translateX(27px);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*#region Nav Bar*/
 
@@ -112,12 +127,26 @@ body {
   list-style: none;
   position: relative;
   background-color: var(--nav-background);
-  padding: 12px 20px;
+  padding: 6px 50px 6px 15px;
   z-index: 1000;
 }
 
+.shop-nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  background-color: var(--primary-darker);
+  padding: 15px;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-family: "DM Sans", sans-serif;
+}
+
 .logo img {
-  width: 40px;
+  width: 250px;
 }
 
 .menu {
@@ -125,7 +154,7 @@ body {
 }
 
 .menu li {
-  padding-left: 30px;
+  padding: 0px 30px;
 }
 
 .menu li a {
@@ -135,23 +164,35 @@ body {
   text-align: center;
   transition: 0.15s ease-in-out;
   position: relative;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .menu li a::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -8px;
   left: 0;
   width: 0;
-  height: 1px;
-  background-color: var(--nav-text);
+  height: 2px;
+  background-color: var(--secondary);
   transition: 0.15s ease-in-out;
 }
 
 .menu li a:hover:after {
   width: 100%;
 }
+
+.menu li a:hover i {
+  transition: all 0.2s ease-in-out;
+  color: var(--secondary);
+}
+
+.menu li i {
+  transition: all 0.2s ease-in-out;
+  color: var(--nav-text);
+}
+
+
 
 .open-menu,
 .close-menu {
@@ -178,7 +219,35 @@ body {
 }
 
 @media (max-width: 610px) {
-  .menu {
+
+  .logo img {
+    width: 200px;
+  }
+
+  .nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--nav-background);
+    padding: 2px 5px 15px 5px;
+    z-index: 1000;
+  }
+
+  .home {
+    display: none;
+  }
+
+  .menu li {
+    transform: scale(0.75);
+    padding: 0px 10px;
+  }
+
+
+
+  .shop-menu {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -192,25 +261,116 @@ body {
     transition: all 0.2s ease-in-out;
   }
 
-  .menu li {
+  .shop-menu li {
     margin-top: 40px;
   }
 
-  .menu li a {
+  .shop-menu li a {
     padding: 10px;
   }
 
-  .open-menu,
-  .close-menu {
+  .shop-open-menu,
+  .shop-close-menu {
     display: block;
   }
 
-  #check:checked ~ .menu {
+  #check:checked~.shop-menu {
     right: 0;
   }
 }
 
+
+
+
+
+/* NAV BAR SKLEPU*/
+
+.shop-menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.shop-menu ul li {
+  /* width: 120px; */
+  padding: 10px 30px;
+  /* text-align: center; */
+
+  position: relative;
+}
+
+.shop-menu ul li a {
+  font-size: 20px;
+  color: var(--nav-text);
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+  display: none;
+}
+
+.shop-menu ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: var(--primary-darker);
+  color: var(--text);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.shop-menu ul li:hover .dropdown-menu ul {
+  display: block;
+  margin: 10px;
+}
+
+.shop-menu ul li:hover .dropdown-menu ul li {
+  width: 180px;
+  padding: 12px;
+}
+
+.dropdown-menu-1 {
+  display: none;
+}
+
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+  display: block;
+  position: absolute;
+  left: 180px;
+  top: 0;
+  background-color: var(--primary);
+  color: var(--text);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
 /*#endregion*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 main {
   display: flex;
@@ -220,8 +380,7 @@ main {
 }
 
 .title-banner {
-  background: url("https://www.wideopenspaces.com/wp-content/uploads/sites/3/2020/09/Exotic-Pets-Where-They-Can-Be-Owned.png?fit=1200%2C800")
-    #2b2d4296;
+  background: url("https://www.wideopenspaces.com/wp-content/uploads/sites/3/2020/09/Exotic-Pets-Where-They-Can-Be-Owned.png?fit=1200%2C800") #2b2d4296;
   background-size: cover;
   background-position: 0;
   background-blend-mode: multiply;
