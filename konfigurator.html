@@ -27,7 +27,7 @@
 		<div class="cfg-container">
 			<div class="cfg-options">
 				<label for="text_grawer">Tekst do wygrawerowania na szybie przedniej</label><br>
-				<input type="text" name="text_grawer" id="text_grawer" onchange="generuj()"><br><br>
+				<input type="text" name="text_grawer" id="text_grawer" onchange="generuj()" maxlength="42"><br><br>
 
 				<span>Rozmiar terrarium</span><br>
 				<input type="radio" name="rozmiar_terrarium" id="rozmiar_s" value="SMALL" onchange="generuj()">
@@ -39,13 +39,13 @@
 				<input type="radio" name="rozmiar_terrarium" id="rozmiar_xl" value="EXTRALARGE" onchange="generuj()">
 				<label for="rozmiar_xl">Bardzo duże (200 x 100 x 100 cm)</label><br><br>
 
-				<label for="">Rodzaj terenu</label><br>
-				<select name="" id="">
-					<option selected>---</option>
-					<option value="">Kamienisty</option>
-					<option value="">Piaszczysty</option>
-					<option value="">Tropikalny</option>
-					<option value="">Mieszany</option>
+				<label for="rodzaj_terenu">Rodzaj terenu</label><br>
+				<select name="rodzaj_terenu" id="rodzaj_terenu" onchange="generuj()">
+					<option value="none" selected>---</option>
+					<option value="kamien">Kamienisty</option>
+					<option value="piasek">Piaszczysty</option>
+					<option value="tropik">Tropikalny</option>
+					<option value="mix">Mieszany</option>
 				</select><br><br>
 
 				<span>Dodatki</span><br>

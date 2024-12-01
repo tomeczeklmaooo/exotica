@@ -15,11 +15,65 @@
 	height: 100%;
 }
 
-.cfg-options input[type=text]
-{
-	width: 50%;
-	height: 40px;
-	padding: 0 10px;
+.cfg-options input,
+.cfg-options select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+.cfg-options input[type="text"] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 10px;
+}
+
+.cfg-options input[type=number] {
+    width: 4%;
+    min-width: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    padding: 6px 6px 6px 6px;
+}
+
+.cfg-options button {
+    min-width: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    padding: 6px 6px 6px 6px;
+}
+
+.cfg-options select {
+    width: 15%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 10px;
+}
+
+.cfg-options a {
+    color: white;
+    text-decoration: none;
+}
+
+.cfg-options a:hover {
+    text-decoration: underline;
 }
 
 .cfg-preview
@@ -28,20 +82,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	color: var(--secondary);
 	height: 100%;
 	border: 1px solid var(--secondary);
 	border-radius: 4px;
 	user-select: none;
-}
-
-.cfg-preview div
-{
-	width: 50px;
-	height: 50px;
-	background: url('https://zoo-aquos.pl/userdata/public/gfx/33824/Repti-Planet-Terrarium-Szklane-Skladane-60x45x60cm.png');
-	background-size: contain;
-	background-position: center;
 }
 
 @keyframes terrarium_in
