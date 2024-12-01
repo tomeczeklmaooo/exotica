@@ -90,6 +90,19 @@
 	user-select: none;
 }
 
+.cfg-preview div
+{
+	position: relative;
+}
+
+.cfg-preview div span
+{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: var(--primary-darker)
+}
+
 @keyframes terrarium_in
 {
 	0% { opacity: 0; }
