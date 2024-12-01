@@ -50,6 +50,11 @@ body {
   flex-direction: column;
 }
 
+::selection {
+  color: var(--text-inverted);
+  background: var(--secondary);
+}
+
 .content {
   flex: 1;
 }
@@ -73,6 +78,7 @@ body {
   border-radius: 50px;
   position: relative;
   padding: 5px;
+  margin-right: 30px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
