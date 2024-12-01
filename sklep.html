@@ -17,7 +17,7 @@
 
 <body>
     <exotica-header></exotica-header>
-    <div class="content">
+    <div class="content centered-content">
         <div style="text-align: center; margin: 4rem;">
             <h1>SKLEP</h1>
         </div>
@@ -55,32 +55,32 @@
                     <option value="Dekoracje">Dekoracje</option>
                     <option value="Akcesoria">Akcesoria</option>
                 </select>
-                
+
                 <label for="min-price">Min Cena:</label>
                 <input type="number" id="min-price" placeholder="0">
-    
+
                 <label for="max-price">Max Cena:</label>
                 <input type="number" id="max-price" placeholder="100">
-    
+
                 <button id="apply-filters">Zastosuj Filtry</button>
             </div>
-            
+
         </div>
 
 
         <main>
             <div id="items-container"></div>
         </main>
+    </div>
+    <exotica-cart></exotica-cart>
 
-        <exotica-cart></exotica-cart>
 
 
+    <exotica-footer></exotica-footer>
 
-        <exotica-footer></exotica-footer>
-
-        <script src="header-footer-loader.js"></script>
-        <script src="dark-mode.js"></script>
-        <script src="shop.js"></script>
+    <script src="header-footer-loader.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="shop.js"></script>
 </body>
 
 </html>
