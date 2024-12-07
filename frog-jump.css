@@ -1,0 +1,83 @@
+.game {
+    background: url("https://i.pinimg.com/736x/9b/da/37/9bda37602a58253d29514cc8c71f6268.jpg") #ffffff;
+    background-size: cover;
+    background-position: 0;
+    background-blend-mode: multiply;
+    width: 60rem;
+    height: 35rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+    position: absolute;
+  }
+  .game p {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0px 0px 12px rgba(66, 68, 90, 1);
+    position: absolute;
+  }
+/*
+.game{
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+}
+*/
+#character{
+    background: url("img/frog.png");
+    background-size: cover;
+    background-position: 0;
+    width: 100px;
+    height: 100px;
+    position:relative;
+    top: 250px;
+    left: -250px;
+}
+.animate{
+    animation: jump 0.4s linear;
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    animation-timing-function: linear;
+}
+@keyframes jump{
+    0%{top: 250px;}
+    30%{top: 100px;}
+    50%{top: 80px;}
+    70%{top: 100px;}
+    100%{top: 250px;}
+}
+
+#block{
+    background: url("img/stone.png");
+    background-size: cover;
+    background-position: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 130px;
+    left: 500px;
+    animation: block infinite 1.2s linear;
+}
+@keyframes block{
+    0%{
+        left: 500px;
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        left: -500px;
+        opacity: 0;
+    }
+}
+p{
+    text-align: center;
+}
