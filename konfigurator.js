@@ -55,13 +55,13 @@ function generuj()
 		switch (dodatki_wybrane[i])
 		{
 			case 'stone':
-				dodaj_dodatek(terrarium_container, 'exotica_logo', true);
+				dodaj_dodatek(terrarium_container, 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/34/Stone_JE4.png', true);
 				break;
 			case 'bush':
-				dodaj_dodatek(terrarium_container, 'exotica_logo', true);
+				dodaj_dodatek(terrarium_container, 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b3/Jungle_Bush.png', true);
 				break;
 			case 'plant':
-				dodaj_dodatek(terrarium_container, 'exotica_logo', true);
+				dodaj_dodatek(terrarium_container, 'https://64.media.tumblr.com/695f50770f11116cb414a3aec35ca56e/c60befcf7978d30e-c7/s1280x1920/ebfad22ef14ebd572464408d85d4708c40040d9d.png', true);
 				break;
 		}
 	}
@@ -81,6 +81,8 @@ function dodaj_terrarium(_container, _append, _terrarium, _anim, _fgtxt, _text, 
 	_append.appendChild(_fgtxt);
 	_append.style.animation = _anim;
 	_fgtxt.innerHTML = _text;
+	_fgtxt.style.fontFamily = 'Comic Sans MS';
+	_fgtxt.style.fontSize = '24pt';
 	_terrarium.style.width = _width;
 	_terrarium.style.height = _height;
 }
@@ -88,7 +90,7 @@ function dodaj_terrarium(_container, _append, _terrarium, _anim, _fgtxt, _text, 
 function dodaj_dodatek(_container, _dodatek, _ismovable)
 {
 	var elem = document.createElement('img');
-	elem.src = `img/${_dodatek}.png`;
+	elem.src = `${_dodatek}`
 	elem.id = 'draggable';
 	elem.style.position = 'absolute';
 	elem.style.width = '50px';
