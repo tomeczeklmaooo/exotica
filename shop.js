@@ -25,6 +25,7 @@ const items = [
     id: 1,
     name: "Żaba Strzałkowa",
     description: "Kolorowy płaz tropikalny.",
+    long_description: "Długi opis",
     price: 219.99,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqY-7J3ljl5ML4kmp15LgAkVVW0YQ04udANQ&s",
@@ -46,6 +47,7 @@ const items = [
     id: 2,
     name: "Żaba 2",
     description: "Opis żaby",
+    long_description: "Długi opis",
     price: 199.99,
     image:
       "https://www.rainforest-alliance.org/wp-content/uploads/2021/06/poison-dart-frog-thumb-1-scaled.jpg.optimal.jpg",
@@ -68,6 +70,7 @@ const items = [
     id: 3,
     name: "Wąż 1",
     description: "Opis węża",
+    long_description: "Długi opis",
     price: 439.99,
     image:
       "https://wp.inews.co.uk/wp-content/uploads/2022/08/SEI_117404634.jpg",
@@ -92,6 +95,7 @@ const items = [
     id: 5,
     name: "Błazenek",
     description: "Popularna ryba morska.",
+    long_description: "Długi opis",
     price: 79.99,
     image:
       "https://reefguard.pl/wp-content/uploads/2016/10/Fotolia_110923756_XL-scaled.jpg",
@@ -99,16 +103,27 @@ const items = [
   },
 ];
 
+// Variables
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let selectedCategory = localStorage.getItem("selectedCategory") || "";
 let filters = { minPrice: 0, maxPrice: Infinity };
 
+// DOM references
 const itemsContainer = document.getElementById("items-container");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const categoryDropdown = document.getElementById("category-dropdown");
 const cartIcon = document.getElementById("cart-icon");
 const cartCount = document.getElementById("cart-count");
+
+function showItemDetails(id) {
+  const item = items.find((i) => i.id === id); // Find the clicked item
+  if (item) {
+    localStorage.setItem("items", JSON.stringify(items));
+
+    window.location.href = `oferta.html?id=${item.id}`;
+  }
+}
 
 // Funkcja do zmiany kategorii z navbaru
 function changeCategory(category) {
@@ -122,7 +137,7 @@ function setCategory(category) {
   renderItems();
 }
 
-// Zaktualizuj liczbę produktów w koszyku
+// Update cart count globally
 function updateCartCount() {
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
   if (cartCount) {
@@ -135,8 +150,9 @@ function updateCartCount() {
   }
 }
 
-// Dodaj produkt do koszyka
-function addToCart(id) {
+// Add product to the cart
+function addToCart(event, id) {
+  event.stopPropagation();
   const item = items.find((i) => i.id === id);
   const existingItem = cart.find((c) => c.id === id);
   if (existingItem) {
@@ -148,7 +164,6 @@ function addToCart(id) {
   renderCart();
   updateCartCount();
 
-  // Informacja zwrotna na przycisku
   const button = document.querySelector(`button[data-id="${id}"]`);
   if (button) {
     button.textContent = "Dodano!";
@@ -156,7 +171,7 @@ function addToCart(id) {
   }
 }
 
-// Usuń produkt z koszyka
+// Remove product from the cart
 function removeFromCart(id) {
   const cartIndex = cart.findIndex((c) => c.id === id);
   if (cartIndex > -1) {
@@ -171,9 +186,9 @@ function removeFromCart(id) {
   updateCartCount();
 }
 
-// Wyświetl produkty na podstawie kategorii i filtrów
+// Render items based on filters and category
 function renderItems() {
-  if (!itemsContainer) return; // Sprawdz, czy jest element na stronie
+  if (!itemsContainer) return;
   const filteredItems = items.filter((item) => {
     const matchesCategory =
       !selectedCategory || item.tags.includes(selectedCategory);
@@ -185,23 +200,23 @@ function renderItems() {
   itemsContainer.innerHTML = filteredItems
     .map(
       (item) => `
-      <div class="item-card">
-        <img src="${item.image}" alt="${item.name}">
-        <h3>${item.name}</h3>
-        <p>${item.description}</p>
-        <p><strong>${item.price.toFixed(2)} PLN</strong></p>
-        <button data-id="${item.id}" onclick="addToCart(${
+    <div class="item-card" onclick="showItemDetails(${item.id})">
+      <img src="${item.image}" alt="${item.name}">
+      <h3>${item.name}</h3>
+      <p>${item.description}</p>
+      <p><strong>${item.price.toFixed(2)} PLN</strong></p>
+      <button data-id="${item.id}" onclick="addToCart(event, ${
         item.id
       })">Dodaj do koszyka</button>
-      </div>
-    `
+    </div>
+  `
     )
     .join("");
 }
 
-// Wyświetl zawartość koszyka
+// Render cart contents
 function renderCart() {
-  if (!cartItems || !cartTotal) return; // Sprawdz, czy jest element na stronie
+  if (!cartItems || !cartTotal) return;
   cartItems.innerHTML = "";
   let total = 0;
   cart.forEach((item) => {
@@ -223,12 +238,12 @@ function renderCart() {
   cartTotal.textContent = total.toFixed(2);
 }
 
-// Zapisz koszyk w localStorage
+// Save cart to localStorage
 function saveCartToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Zastosuj filtry cenowe
+// Apply price filters
 document.getElementById("apply-filters")?.addEventListener("click", () => {
   filters.minPrice =
     parseFloat(document.getElementById("min-price").value) || 0;
@@ -237,28 +252,34 @@ document.getElementById("apply-filters")?.addEventListener("click", () => {
   renderItems();
 });
 
-// Obsługa zmiany kategorii w dropdownie na stronie sklepu
+// Handle category changes
 categoryDropdown?.addEventListener("change", (e) => {
   setCategory(e.target.value);
 });
 
-// Inicjalizacja strony
+function setCategory(category) {
+  selectedCategory = category;
+  localStorage.setItem("selectedCategory", category);
+  renderItems();
+}
+
+// Initialize page
 document.addEventListener("DOMContentLoaded", () => {
   renderItems();
   renderCart();
   updateCartCount();
 
-  // Ustaw wybraną kategorię w dropdownie na stronie sklepu
+  // Set selected category in dropdown
   if (categoryDropdown) {
     const storedCategory = localStorage.getItem("selectedCategory");
     if (storedCategory) {
-      categoryDropdown.value = storedCategory; // Ustaw dropdown na wybraną kategorię
-      selectedCategory = storedCategory; // Ustaw kategorię w skrypcie
+      categoryDropdown.value = storedCategory;
+      selectedCategory = storedCategory;
     }
   }
 });
 
-// Obsługa przełączania widoczności koszyka
+// Toggle cart visibility
 cartIcon?.addEventListener("click", (e) => {
   e.preventDefault();
   const cartMenu = document.getElementById("cart-menu");

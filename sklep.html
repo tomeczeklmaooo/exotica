@@ -21,60 +21,71 @@
         <div style="text-align: center; margin: 4rem;">
             <h1>SKLEP</h1>
         </div>
-
-        <div class="shop-controls">
-            <div id="filters">
-                <input type="text" id="search-bar" placeholder="Szukaj..." />
-                <select id="sort-options">
-                    <option value="name-asc">Nazwa (A-Z)</option>
-                    <option value="name-desc">Nazwa (Z-A)</option>
-                    <option value="price-low">Cena (od najniższej)</option>
-                    <option value="price-high">Cena (od najwyższej)</option>
-                </select>
-                <label for="category-filter">Kategoria:</label>
-                <select id="category-dropdown">
-                    <option value="">Wszystkie Kategorie</option>
-                    <option value="Gady">Gady</option>
-                    <option value="Płazy">Płazy</option>
-                    <option value="Bezkręgowce">Bezkręgowce</option>
-                    <option value="Ryby">Ryby</option>
-                    <option value="Żaby">Żaby</option>
-                    <option value="Salamandry">Salamandry</option>
-                    <option value="Jaszczurki">Jaszczurki</option>
-                    <option value="Węże">Węże</option>
-                    <option value="Żółwie">Żółwie</option>
-                    <option value="Pająki">Pająki</option>
-                    <option value="Skorpiony">Skorpiony</option>
-                    <option value="Owady">Owady</option>
-                    <option value="Słodkowodne">Słodkowodne</option>
-                    <option value="Morskie">Morskie</option>
-                    <option value="Denne">Denne</option>
-                    <option value="Karma">Karma</option>
-                    <option value="Terraria">Terraria</option>
-                    <option value="Akwaria">Akwaria</option>
-                    <option value="Dekoracje">Dekoracje</option>
-                    <option value="Akcesoria">Akcesoria</option>
-                </select>
-
-                <label for="min-price">Min Cena:</label>
-                <input type="number" id="min-price" placeholder="0">
-
-                <label for="max-price">Max Cena:</label>
-                <input type="number" id="max-price" placeholder="100">
-
-                <button id="apply-filters">Zastosuj Filtry</button>
+        <div class="shop-container">
+            <div id="items-container"></div>
+            <div class="shop-controls">
+                <div id="filters">
+    
+                    <h2>Filtry</h2><br>
+                    <!-- Search Bar -->
+                    <input type="text" id="search-bar" placeholder="Szukaj..." aria-label="Szukaj..." /><br>
+    
+                    <label for="category-filter">Kategoria:</label>
+                    <select id="category-dropdown">
+                        <option value="">Wszystkie Kategorie</option>
+                        <option value="Gady">Gady</option>
+                        <option value="Płazy">Płazy</option>
+                        <option value="Bezkręgowce">Bezkręgowce</option>
+                        <option value="Ryby">Ryby</option>
+                        <option value="Żaby">Żaby</option>
+                        <option value="Salamandry">Salamandry</option>
+                        <option value="Jaszczurki">Jaszczurki</option>
+                        <option value="Węże">Węże</option>
+                        <option value="Żółwie">Żółwie</option>
+                        <option value="Pająki">Pająki</option>
+                        <option value="Skorpiony">Skorpiony</option>
+                        <option value="Owady">Owady</option>
+                        <option value="Słodkowodne">Słodkowodne</option>
+                        <option value="Morskie">Morskie</option>
+                        <option value="Denne">Denne</option>
+                        <option value="Karma">Karma</option>
+                        <option value="Terraria">Terraria</option>
+                        <option value="Akwaria">Akwaria</option>
+                        <option value="Dekoracje">Dekoracje</option>
+                        <option value="Akcesoria">Akcesoria</option>
+                    </select><br>
+    
+                    <!-- Price Filters -->
+                    <div id="price-filters">
+                        <label for="min-price">Cena minimalna:</label>
+                        <input type="number" id="min-price" placeholder="0" /><br>
+                        <label for="max-price">Cena maksymalna:</label>
+                        <input type="number" id="max-price" placeholder="∞" /><br>
+                    </div>
+    
+                    <select id="sort-options">
+                        <option value="name-asc">Nazwa (A-Z)</option>
+                        <option value="name-desc">Nazwa (Z-A)</option>
+                        <option value="price-low">Cena (od najniższej)</option>
+                        <option value="price-high">Cena (od najwyższej)</option>
+                    </select>
+                    
+                    <button id="apply-filters">Zastosuj</button>
+                </div>
+    
             </div>
-
         </div>
 
 
-        <main>
-            <div id="items-container"></div>
-        </main>
+
+        
+        <div id="item-modal" class="modal">
+            <div id="modal-content" class="modal-content">
+              <!-- Detailed item information will be rendered here dynamically -->
+            </div>
+          </div>
     </div>
     <exotica-cart></exotica-cart>
-
-
 
     <exotica-footer></exotica-footer>
 

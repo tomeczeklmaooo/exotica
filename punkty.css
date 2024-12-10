@@ -61,6 +61,15 @@
     color: var(--nav-background);
 }
 
+.points-grid-display button:disabled::before,.points-grid-display button:disabled::after {
+    content: "";
+    background: rgb(121, 121, 121);
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
 .points-grid-display button::before,
 .points-grid-display button::after {
     position: absolute;

@@ -24,7 +24,7 @@ class ExoticaHeader extends HTMLElement {
                     <li><a href="konfigurator.html"><i class="fa-solid fa-sliders fa-xl"></i></a></li>
                     <li><a href="konto.html"><i class="fa-solid fa-user fa-xl"></i></a></li>
                     <li><a href="punkty.html"><i class="fa-solid fa-trophy fa-xl"></i></a>
-                    <span class="cart-count" id="points-count">500</span>
+                    <span class="cart-count" id="points-count">0</span>
                     </li>
                     <li><a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
                     <span class="cart-count" id="cart-count"></span>

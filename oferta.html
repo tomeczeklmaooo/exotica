@@ -4,11 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Punkty | EXOTICA</title>
+	<title>Szczegóły | EXOTICA</title>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="konfigurator.css">
 	<link rel="stylesheet" href="shop.css">
-	<link rel="stylesheet" href="punkty.css">
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="load-theme.js"></script>
@@ -19,36 +17,21 @@
 	<exotica-header></exotica-header>
 
 	<div class="content">
-
-
-        <div class="points-grid-display">
-            <div>
-				<h1>Punkty EXOTICA</h1>
-				<p>Zbieraj punkty wykonując różne aktywności oraz grając w różne mini-gry</p>
-				<p>Punkty można później wymienić na zniżki i nagrody</p>
-			</div>
-            <div>
-				<h1>Nagrody</h1>
-				<p>Zrealizuj swoje punkty</p><br><br>
-				<button> <span>Zobacz nagrody</span></button>
-			</div>
-            <div>
-				<h1>Frog Jump</h1>
-				<p>Przetrwaj jak najdłużej, skacząc nad przeszkodami</p><br><br>
-				<button onclick="document.location.href = 'window.location.href = `frog-jump.html'"><span>Zagraj</span></button>
-			</div>
-            <div>
-				<h1>Frog Clicker</h1>
-				<p>Klikaj, kupuj, ulepszaj... Jeszcze niedostępne</p><br><br>
-				<button disabled> <span>NIEDOSTĘPNE</span></button>
-			</div>
-        </div>
-
+		<button onclick="history.back()" class="go-back"><i class="fa-solid fa-arrow-left fa-2xl"></i></button>
+		<div id="item-details"></div>
 		
-	</div>
-
+		<script src="details.js"></script>
+	
 	<exotica-cart></exotica-cart>
+
+	</div>
 	<exotica-footer></exotica-footer>
+
+	<!-- PAGE LOADER BEGIN -->
+	<!-- <div id="loader">
+		<span class="loader"></span>
+	</div> -->
+	<!-- PAGE LOADER END -->
 
 	<script src="header-footer-loader.js"></script>
 	<script src="core.js"></script>
