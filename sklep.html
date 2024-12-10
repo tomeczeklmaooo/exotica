@@ -17,11 +17,10 @@
 
 <body>
     <exotica-header></exotica-header>
-    <div class="content centered-content">
-        <div style="text-align: center; margin: 4rem;">
-            <h1>SKLEP</h1>
-        </div>
+    <div class="content">
+        <h1 style="text-align: center; margin: 50px;">SKLEP</h1>
         <div class="shop-container">
+        
             <div id="items-container"></div>
             <div class="shop-controls">
                 <div id="filters">
@@ -75,19 +74,12 @@
     
             </div>
         </div>
-
-
-
-        
-        <div id="item-modal" class="modal">
-            <div id="modal-content" class="modal-content">
-              <!-- Detailed item information will be rendered here dynamically -->
-            </div>
-          </div>
+        <exotica-footer></exotica-footer>
     </div>
+    
     <exotica-cart></exotica-cart>
 
-    <exotica-footer></exotica-footer>
+    
 
     <script src="header-footer-loader.js"></script>
     <script src="dark-mode.js"></script>
