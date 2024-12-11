@@ -141,6 +141,30 @@ select, input[type="text"], input[type="button"]
 	height: 150px;
 }
 
+.add-on.wood
+{
+	background-image: url('img/kloda.png');
+	background-size: cover;
+	width: 350px;
+	height: 150px;
+}
+
+.add-on.palm
+{
+	background-image: url('img/palma.png');
+	background-size: cover;
+	width: 150px;
+	height: 150px;
+}
+
+.add-on.grass
+{
+	background-image: url('img/trawa.png');
+	background-size: cover;
+	width: 100px;
+	height: 100px;
+}
+
 .accessory-list {
 	margin-bottom: 20px;
 }

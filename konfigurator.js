@@ -4,6 +4,9 @@ let plant_amt = 0;
 let ship_amt = 0;
 let lamp_amt = 0;
 let cave_amt = 0;
+let wood_amt = 0;
+let palm_amt = 0;
+let grass_amt = 0;
 let accessories = [];
 
 function update_display() {
@@ -11,6 +14,9 @@ function update_display() {
     document.getElementById('ship_amt').innerText = ship_amt;
     document.getElementById('lamp_amt').innerText = lamp_amt;
     document.getElementById('cave_amt').innerText = cave_amt;
+    document.getElementById('wood_amt').innerText = wood_amt;
+    document.getElementById('palm_amt').innerText = palm_amt;
+    document.getElementById('grass_amt').innerText = grass_amt;
     terrarium_size();
 	terrain_img();
 	var tekst = document.getElementById('text_grawer').value;
@@ -62,7 +68,7 @@ function terrain_img() {
             img_url = 'img/dirt.png';;
             break;
         case 'moss':
-            img_url = 'img/podloze.png';;
+            img_url = 'img/mech.png';;
             break;
     }
 
@@ -123,6 +129,48 @@ document.getElementById('remove_cave').addEventListener('click', function() {
         cave_amt--;
         update_display();
         remove_dodatek('cave');
+    }
+});
+
+document.getElementById('add_wood').addEventListener('click', function() {
+    wood_amt++;
+    update_display();
+    create_dodatek('wood');
+});
+
+document.getElementById('remove_wood').addEventListener('click', function() {
+    if (wood_amt > 0) {
+        wood_amt--;
+        update_display();
+        remove_dodatek('wood');
+    }
+});
+
+document.getElementById('add_palm').addEventListener('click', function() {
+    palm_amt++;
+    update_display();
+    create_dodatek('palm');
+});
+
+document.getElementById('remove_palm').addEventListener('click', function() {
+    if (palm_amt > 0) {
+        palm_amt--;
+        update_display();
+        remove_dodatek('palm');
+    }
+});
+
+document.getElementById('add_grass').addEventListener('click', function() {
+    grass_amt++;
+    update_display();
+    create_dodatek('grass');
+});
+
+document.getElementById('remove_grass').addEventListener('click', function() {
+    if (grass_amt > 0) {
+        grass_amt--;
+        update_display();
+        remove_dodatek('grass');
     }
 });
 
