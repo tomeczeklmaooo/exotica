@@ -26,6 +26,7 @@
     min-width: 300px;
     position: absolute;
     right: 50px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .shop-controls input,
@@ -40,7 +41,7 @@
     width: 100%;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px;
     font-size: 16px;
     background-color: white;
     background-image: url("img/searchicon.png");
@@ -54,24 +55,24 @@
     min-width: 50px;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px;
     font-size: 16px;
     background-color: white;
     background-position: 5px 5px;
     background-repeat: no-repeat;
-    padding: 6px 6px 6px 6px;
+    padding: 6px 6px 6px 12px;
 }
 
 .shop-controls button {
     min-width: 50px;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px;
     font-size: 16px;
     background-color: white;
     background-position: 5px 5px;
     background-repeat: no-repeat;
-    padding: 6px 6px 6px 6px;
+    padding: 10px 26px 10px 26px;
 }
 
 
@@ -80,7 +81,7 @@
     width: 100%;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px;
     font-size: 16px;
     background-color: white;
     padding: 10px 10px 10px 10px;
@@ -123,6 +124,7 @@
     border-radius: 1rem;
 
     box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     color: var(--text);
     transition: all 0.3s ease;
     max-height: 30rem;
@@ -168,6 +170,7 @@
 
     border: 2px solid var(--primary);
     border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px, rgba(0, 0, 0, 0.1) 0px 4px 3px 1px, rgba(0, 0, 0, 0.1) 0px -1px 0px inset;
 }
 
 .item-card button:hover {
@@ -699,4 +702,24 @@
     transform: scale(0.95);
     transition: all 0.1s;
     filter: brightness(115%);
+  }
+
+  .go-to-shop {
+    width: 250px;
+    height: 120px;
+    font-size: 25px;
+    border-radius: 20px;
+    background-color: var(--text);
+    color: var(--background);
+    border-style: none;
+    margin: 20px;
+    transition: all 0.1s;
+    
+  }
+
+  .go-to-shop:hover {
+    transform: scale(0.95);
+    transition: all 0.1s;
+    background-color: var(--primary);
+    cursor: pointer;
   }

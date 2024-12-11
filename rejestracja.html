@@ -21,7 +21,7 @@
 			flex-direction: column;
 			text-align: center;
 			width: 25%;
-			
+			margin: 40px;
 		}
 
 		.account-card a {
@@ -42,25 +42,39 @@
 <body id="body">
 	<exotica-header></exotica-header>
 
-	<div class="content">
+	<div class="content centered-content">
 
-	<main>
-		
-		<div class="account-card">
-			<h1>Zaloguj się do konta EXOTICA</h1>
+	<div class="account-card">
+			<h1>Stwórz konto EXOTICA</h1>
 			<div class="pay-info-inputGroup" style="margin-top: 50px;">
 				<input autocomplete="on" required="" type="email">
 				<label for="name">Adres e-mail</label>
+			</div>
+			<div class="pay-info-input-container">
+				<div class="pay-info-inputGroup">
+					<input autocomplete="on" required="" type="text">
+					<label for="name">Imię</label>
+				</div>
+				<div class="pay-info-inputGroup">
+					<input autocomplete="on" required="" type="text">
+					<label for="name">Nazwisko</label>
+				</div>
+			</div>
+			<div class="pay-info-inputGroup" style="margin-top: 50px;">
+				<input autocomplete="on" required="" type="text">
+				<label for="name">Nazwa użytkownika</label>
 			</div>
 			<div class="pay-info-inputGroup">
 				<input autocomplete="off" required="" type="password">
 				<label for="name">Hasło</label>
 			</div>
-			<button class="checkout-button" style="height: 50px; margin-top: 20px; margin-bottom: 30px;">ZALOGUJ</button>
-			<a href="resetuj-haslo.html">Nie pamiętasz hasła?</a>
-			<a href="rejestracja.html">Nie masz konta? Zarejestruj się</a>
+			<div class="pay-info-inputGroup">
+				<input autocomplete="off" required="" type="password">
+				<label for="name">Potwierdź hasło</label>
+			</div>
+			<button class="checkout-button" style="height: 50px; margin-top: 20px; margin-bottom: 30px;" onclick="window.location.href = `loading.html`">ZAREJESTRUJ SIĘ</button>
+			<a href="konto.html">Masz już konto? Zaloguj się</a>
 		</div>
-	</main>
 	
 	<exotica-cart></exotica-cart>
 
