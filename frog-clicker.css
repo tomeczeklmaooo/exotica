@@ -1,0 +1,28 @@
+.game-state-var
+{
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 0;
+	font-size: 14pt;
+	background: #0000002f;
+	color: #ffffff;
+	border-radius: 4px;
+}
+
+.game-state-var-box
+{
+	width: 200px;
+	text-align: center;
+}
+
+.main-button
+{
+	transition: 0.15s ease;
+}
+.main-button:active
+{
+	transform: scale(0.96);
+}

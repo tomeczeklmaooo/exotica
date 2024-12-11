@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="pl" data-theme="light">
+<html lang="pl" data-theme="light"  onclick="jump()">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Punkty | EXOTICA</title>
+	<title>Frog Clicker | EXOTICA</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="konfigurator.css">
 	<link rel="stylesheet" href="shop.css">
 	<link rel="stylesheet" href="punkty.css">
+    <link rel="stylesheet" href="frog-clicker.css">
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="load-theme.js"></script>
@@ -18,31 +19,26 @@
 <body id="body">
 	<exotica-header></exotica-header>
 
-	<div class="content">
+	<div class="content centered-content">
+        
+        
+        <main>
+            
+            <div class="game">
+				<div class="game-state-var prevent-select">
+					<div id="clicks" class="game-state-var-box">Clicks: %s</div>
+					<div id="experience" class="game-state-var-box">Experience: %s</div>
+					<div id="level" class="game-state-var-box">Level: %s</div>
+				</div>
 
+                <div class="main-button" onclick="clicker_handler()">
+					<img src="img/frog.png" alt="placeholder image" width="250px">
+				</div>
+            </div>
+            
+		</main>
+        
 
-        <div class="points-grid-display">
-            <div>
-				<h1>Punkty EXOTICA</h1>
-				<p>Zbieraj punkty wykonując różne aktywności oraz grając w różne mini-gry</p>
-				<p>Punkty można później wymienić na zniżki i nagrody</p>
-			</div>
-            <div>
-				<h1>Nagrody</h1>
-				<p>Zrealizuj swoje punkty</p><br><br>
-				<button disabled> <span>NIEDOSTĘPNE</span></button>
-			</div>
-            <div>
-				<h1>Frog Jump</h1>
-				<p>Przetrwaj jak najdłużej, skacząc nad przeszkodami</p><br><br>
-				<button onclick="window.location.href = `frog-jump.html`"><span>Zagraj</span></button>
-			</div>
-            <div>
-				<h1>Frog Clicker</h1>
-				<p>Klikaj, kupuj, ulepszaj</p><br><br>
-				<button onclick="window.location.href = `frog-clicker.html`"><span>Zagraj</span></button>
-			</div>
-        </div>
 
 		
 	</div>
@@ -54,6 +50,7 @@
 	<script src="core.js"></script>
 	<script src="dark-mode.js"></script>
 	<script src="shop.js"></script>
+    <script src="frog-clicker.js"></script>
 </body>
 
 </html>
