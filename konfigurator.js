@@ -126,6 +126,28 @@ document.getElementById('remove_cave').addEventListener('click', function() {
     }
 });
 
+// function click_handler(dodatek, amount)
+// {
+// 	document.getElementById(`add_${dodatek}`).addEventListener('click', function() {
+// 		amount++;
+// 		update_display();
+// 		create_dodatek(dodatek);
+// 	});
+	
+// 	document.getElementById(`remove_${dodatek}`).addEventListener('click', function() {
+// 		if (amount > 0) {
+// 			amount--;
+// 			update_display();
+// 			remove_dodatek(dodatek);
+// 		}
+// 	});
+// }
+
+// click_handler('plant', plant_amt);
+// click_handler('ship', ship_amt);
+// click_handler('lamp', lamp_amt);
+// click_handler('cave', cave_amt);
+
 function create_dodatek(type) {
     const terrarium = document.getElementById('cfg-preview');
     const accessory = document.createElement('div');

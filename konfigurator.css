@@ -87,7 +87,6 @@
 .form-group
 {
 	margin-bottom: 15px;
-	width: 50%;
 }
 
 label
@@ -148,7 +147,8 @@ select, input[type="text"], input[type="button"]
 .accessory-item {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: left;
+	gap: 10px;
 	margin-bottom: 10px;
 }
 .accessory-item button {
