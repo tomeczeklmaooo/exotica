@@ -78,8 +78,9 @@
 
 .teren
 {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
+	width: 100%;
 	height: 150px;
 }
 
@@ -178,12 +179,12 @@ select, input[type="text"], input[type="button"]
 	position: relative;
 } */
 
-.cfg-preview div span
+.cfg-preview span
 {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	color: var(--primary-darker)
+	color: white;
 }
 
 @keyframes terrarium_in

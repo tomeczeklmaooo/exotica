@@ -27,11 +27,11 @@
 		<div class="cfg-container">
 			<div class="cfg-options">
 				<label for="text_grawer">Tekst do wygrawerowania na szybie przedniej</label><br>
-				<input type="text" name="text_grawer" id="text_grawer" onchange="generuj()" maxlength="42"><br><br>
+				<input type="text" name="text_grawer" id="text_grawer" maxlength="42" onchange="update_display()"><br><br>
 
 				<div class="form-group">
 					<label for="size">Rozmiar:</label>
-					<select id="size" onchange="terrarium_size()">
+					<select id="size" onchange="update_display()">
 						<option value="small">Małe (60 x 40 x 40 cm)</option>
 						<option value="medium">Średnie (100 x 50 x 50 cm)</option>
 						<option value="large">Duże (150 x 80 x 80 cm)</option>
@@ -41,7 +41,7 @@
 
 				<div class="form-group">
 					<label for="terrain">Rodzaj terenu:</label>
-					<select id="terrain">
+					<select id="terrain" onchange="update_display()">
 						<option value="sand">Piasek</option>
 						<option value="gravel">Żwir</option>
 						<option value="grass">Trawa</option>
