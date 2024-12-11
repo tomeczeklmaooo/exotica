@@ -138,14 +138,16 @@
 
 
 let plant_amt = 0;
-let stone_amt = 0;
-let bush_amt = 0;
+let ship_amt = 0;
+let lamp_amt = 0;
+let cave_amt = 0;
 let accessories = [];
 
 function update_display() {
     document.getElementById('plant_amt').innerText = plant_amt;
-    document.getElementById('stone_amt').innerText = stone_amt;
-    document.getElementById('bush_amt').innerText = bush_amt;
+    document.getElementById('ship_amt').innerText = ship_amt;
+    document.getElementById('lamp_amt').innerText = lamp_amt;
+    document.getElementById('cave_amt').innerText = cave_amt;
     terrarium_size();
 }
 
@@ -155,47 +157,47 @@ function terrarium_size() {
 
     switch (size) {
         case 'small':
-            terrarium.style.width = '200px';
-            terrarium.style.height = '200px';
-            break;
-        case 'medium':
-            terrarium.style.width = '300px';
+            terrarium.style.width = '400px';
             terrarium.style.height = '300px';
             break;
-        case 'large':
-            terrarium.style.width = '400px';
+        case 'medium':
+            terrarium.style.width = '600px';
             terrarium.style.height = '400px';
             break;
-        case 'extralarge':
-            terrarium.style.width = '500px';
+        case 'large':
+            terrarium.style.width = '700px';
             terrarium.style.height = '500px';
+            break;
+        case 'extralarge':
+            terrarium.style.width = '800px';
+            terrarium.style.height = '600px';
             break;
     }
 }
 
 function terrain_img() {
     const terrain = document.getElementById('terrain').value;
-    const terrarium = document.getElementById('cfg-preview');
+    const teren = document.getElementById('teren');
 
     let img_url = '';
 
     switch (terrain) {
         case 'sand':
-            img_url = 'url("https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3861_i148_w750.jpeg")';
+            img_url = 'img/podloze.png';
             break;
         case 'gravel':
-            img_url = 'url("https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/9e/Gravel_%28texture%29_JE2_BE1.png")';
+            img_url = 'img/podloze.png';;
             break;
         case 'grass':
-            img_url = 'url("https://i.pinimg.com/736x/bd/cb/64/bdcb6414071ce880f3fa1dc18e2eda5b.jpg")';
+            img_url = 'img/dirt.png';;
             break;
         case 'moss':
-            img_url = 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4YG1_VC5e6ndX0ox9-8o-Bmcv9NWqWQSmg&s")';
+            img_url = 'img/podloze.png';;
             break;
     }
 
-    terrarium.style.backgroundImage = img_url;
-	terrarium.style.backgroundSize = 'cover';
+    teren.style.backgroundImage = `url(${img_url})`;
+	teren.style.backgroundSize = 'cover';
 }
 
 document.getElementById('add_plant').addEventListener('click', function() {
@@ -212,31 +214,45 @@ document.getElementById('remove_plant').addEventListener('click', function() {
     }
 });
 
-document.getElementById('add_stone').addEventListener('click', function() {
-    stone_amt++;
+document.getElementById('add_ship').addEventListener('click', function() {
+    ship_amt++;
     update_display();
-    create_dodatek('stone');
+    create_dodatek('ship');
 });
 
-document.getElementById('remove_stone').addEventListener('click', function() {
-    if (stone_amt > 0) {
-        stone_amt--;
+document.getElementById('remove_ship').addEventListener('click', function() {
+    if (ship_amt > 0) {
+        ship_amt--;
         update_display();
-        remove_dodatek('stone');
+        remove_dodatek('ship');
     }
 });
 
-document.getElementById('add_bush').addEventListener('click', function() {
-    bush_amt++;
+document.getElementById('add_lamp').addEventListener('click', function() {
+    lamp_amt++;
     update_display();
-    create_dodatek('bush');
+    create_dodatek('lamp');
 });
 
-document.getElementById('remove_bush').addEventListener('click', function() {
-    if (bush_amt > 0) {
-        bush_amt--;
+document.getElementById('remove_lamp').addEventListener('click', function() {
+    if (lamp_amt > 0) {
+        lamp_amt--;
         update_display();
-        remove_dodatek('bush');
+        remove_dodatek('lamp');
+    }
+});
+
+document.getElementById('add_cave').addEventListener('click', function() {
+    cave_amt++;
+    update_display();
+    create_dodatek('cave');
+});
+
+document.getElementById('remove_cave').addEventListener('click', function() {
+    if (cave_amt > 0) {
+        cave_amt--;
+        update_display();
+        remove_dodatek('cave');
     }
 });
 

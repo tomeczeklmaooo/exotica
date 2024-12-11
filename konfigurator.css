@@ -76,6 +76,13 @@
     text-decoration: underline;
 }
 
+.teren
+{
+	position: fixed;
+	bottom: 0;
+	height: 150px;
+}
+
 .form-group
 {
 	margin-bottom: 15px;
@@ -104,17 +111,34 @@ select, input[type="text"], input[type="button"]
 
 .add-on.plant
 {
-	background-color: green;
+	background-image: url('img/wodorosty.png');
+	background-size: cover;
+	width: 90px;
+	height: 180px;
 }
 
-.add-on.stone
+.add-on.ship
 {
-	background-color: gray;
+	background-image: url('img/starek.png');
+	background-size: cover;
+	width: 75px;
+	height: 60px;
 }
 
-.add-on.bush
+.add-on.lamp
 {
-	background-color: blue;
+	background-image: url('img/lampy.png');
+	background-size: cover;
+	width: 120px;
+	height: 80px;
+}
+
+.add-on.cave
+{
+	background-image: url('img/jaskinia.png');
+	background-size: cover;
+	width: 150px;
+	height: 150px;
 }
 
 .accessory-list {
@@ -140,11 +164,13 @@ select, input[type="text"], input[type="button"]
 	color: var(--secondary);
 	/* height: 100%; */
 	position: relative;
-	width: 250px;
-	height: 250px;
+	width: 600px;
+	height: 450px;
 	border: 1px solid var(--secondary);
 	border-radius: 4px;
 	user-select: none;
+	background-image: url('img/akwarium.png');
+	background-size: cover;
 }
 
 /* .cfg-preview div
