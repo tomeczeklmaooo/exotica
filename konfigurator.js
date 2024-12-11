@@ -1,4 +1,6 @@
-
+let dodatek_limit_li = 2; // lamp, cave, wood
+let dodatek_limit_mi = 4; // ship, palm
+let dodatek_limit_si = 10; // plant, grass
 
 let plant_amt = 0;
 let ship_amt = 0;
@@ -78,8 +80,15 @@ function terrain_img() {
 
 document.getElementById('add_plant').addEventListener('click', function() {
     plant_amt++;
-    update_display();
-    create_dodatek('plant');
+    if (plant_amt <= dodatek_limit_si)
+	{
+		update_display();
+		create_dodatek('plant');
+	}
+	else
+	{
+		plant_amt = dodatek_limit_si;
+	}
 });
 
 document.getElementById('remove_plant').addEventListener('click', function() {
@@ -92,8 +101,15 @@ document.getElementById('remove_plant').addEventListener('click', function() {
 
 document.getElementById('add_ship').addEventListener('click', function() {
     ship_amt++;
-    update_display();
-    create_dodatek('ship');
+    if (ship_amt <= dodatek_limit_mi)
+	{
+		update_display();
+		create_dodatek('ship');
+	}
+	else
+	{
+		ship_amt = dodatek_limit_mi;
+	}
 });
 
 document.getElementById('remove_ship').addEventListener('click', function() {
@@ -106,8 +122,15 @@ document.getElementById('remove_ship').addEventListener('click', function() {
 
 document.getElementById('add_lamp').addEventListener('click', function() {
     lamp_amt++;
-    update_display();
-    create_dodatek('lamp');
+    if (lamp_amt <= dodatek_limit_li)
+	{
+		update_display();
+		create_dodatek('lamp');
+	}
+	else
+	{
+		lamp_amt = dodatek_limit_li;
+	}
 });
 
 document.getElementById('remove_lamp').addEventListener('click', function() {
@@ -120,8 +143,15 @@ document.getElementById('remove_lamp').addEventListener('click', function() {
 
 document.getElementById('add_cave').addEventListener('click', function() {
     cave_amt++;
-    update_display();
-    create_dodatek('cave');
+    if (cave_amt <= dodatek_limit_li)
+	{
+		update_display();
+		create_dodatek('cave');
+	}
+	else
+	{
+		cave_amt = dodatek_limit_li;
+	}
 });
 
 document.getElementById('remove_cave').addEventListener('click', function() {
@@ -134,8 +164,15 @@ document.getElementById('remove_cave').addEventListener('click', function() {
 
 document.getElementById('add_wood').addEventListener('click', function() {
     wood_amt++;
-    update_display();
-    create_dodatek('wood');
+    if (wood_amt <= dodatek_limit_li)
+	{
+		update_display();
+		create_dodatek('wood');
+	}
+	else
+	{
+		wood_amt = dodatek_limit_li;
+	}
 });
 
 document.getElementById('remove_wood').addEventListener('click', function() {
@@ -148,8 +185,15 @@ document.getElementById('remove_wood').addEventListener('click', function() {
 
 document.getElementById('add_palm').addEventListener('click', function() {
     palm_amt++;
-    update_display();
-    create_dodatek('palm');
+    if (palm_amt <= dodatek_limit_mi)
+	{
+		update_display();
+		create_dodatek('palm');
+	}
+	else
+	{
+		palm_amt = dodatek_limit_mi;
+	}
 });
 
 document.getElementById('remove_palm').addEventListener('click', function() {
@@ -162,8 +206,15 @@ document.getElementById('remove_palm').addEventListener('click', function() {
 
 document.getElementById('add_grass').addEventListener('click', function() {
     grass_amt++;
-    update_display();
-    create_dodatek('grass');
+    if (grass_amt <= dodatek_limit_si)
+	{
+		update_display();
+		create_dodatek('grass');
+	}
+	else
+	{
+		grass_amt = dodatek_limit_si;
+	}
 });
 
 document.getElementById('remove_grass').addEventListener('click', function() {

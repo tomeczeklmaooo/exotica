@@ -129,8 +129,8 @@ select, input[type="text"], input[type="button"]
 {
 	background-image: url('img/lampy.png');
 	background-size: cover;
-	width: 120px;
-	height: 80px;
+	width: 240px;
+	height: 160px;
 }
 
 .add-on.cave
