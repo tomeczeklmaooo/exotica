@@ -283,6 +283,65 @@ const items = [
     ],
   },
   {
+    id: 14,
+    name: "Salamandra Olbrzymia Japońska",
+    description: "Największy płaz na świecie, żyjący w wodach słodkowodnych.",
+    long_description:
+      "Salamandra Olbrzymia Japońska (Andrias japonicus) to jeden z największych gatunków płazów, osiągający do 150 cm długości. Żyje w czystych, chłodnych strumieniach górskich Japonii, gdzie poluje na małe ryby i bezkręgowce. Salamandra ta jest gatunkiem zagrożonym, chronionym przez prawo w swoim naturalnym środowisku. Jej masywne ciało i ciemna, plamista skóra pomagają w kamuflażu. Salamandra olbrzymia jest fascynującym przykładem adaptacji do życia wodnego w trudnych warunkach.",
+    price: 899.99,
+    image:
+      "https://japoland.pl/wp-content/uploads/Japan_16_Aug_D02_084_nik_crop_750.jpg",
+    tags: [
+      "Salamandry",
+      "Płazy",
+      "Słodkowodne",
+      "Zwierzęta",
+      "Olbrzymia",
+      "Japonia",
+      "Rzadkie",
+    ],
+  },
+  {
+    id: 15,
+    name: "Nogolotka siwa",
+    description: "Żaba z długimi palcami, znana z umiejętności wspinania.",
+    long_description:
+      "Nogolotka siwa (Chiromantis xerampelina) to tropikalny płaz występujący w Afryce, który wyróżnia się wyjątkowo długimi palcami z przylgami, umożliwiającymi wspinanie się po gładkich powierzchniach. Jest to gatunek drzewny, preferujący wilgotne środowiska. Żaby te znane są z unikalnych odgłosów godowych i kolorowej skóry, która pomaga im w kamuflażu wśród liści.",
+    price: 139.99,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/White_reed_frog_%286377037007%29.jpg",
+    tags: [
+      "Żaby",
+      "Płazy",
+      "Tropikalne",
+      "Drzewne",
+      "Zwierzęta",
+      "Afryka",
+      "Wspinaczka",
+    ],
+  },
+  {
+    id: 16,
+    name: "Pyton Królewski",
+    description: "Popularny wąż hodowlany o spokojnym usposobieniu.",
+    long_description:
+      "Pyton Królewski (Python regius) to jeden z najczęściej hodowanych węży na świecie. Dorasta do około 120-150 cm długości i charakteryzuje się pięknym ubarwieniem w odcieniach brązu, żółci i czerni. Wąż ten jest znany ze swojego spokojnego temperamentu, co czyni go idealnym wyborem dla początkujących hodowców. Pyton królewski żywi się głównie małymi gryzoniami i wymaga terrarium z odpowiednią wilgotnością i temperaturą.",
+    price: 499.99,
+    image: "https://pliki.infowet.pl/i/00/08/60/000860_r0_940.jpg",
+    tags: ["Węże", "Gady", "Zwierzęta", "Pyton", "Spokojne", "Hodowla"],
+  },
+  {
+    id: 17,
+    name: "Sumik Płaskopyski",
+    description: "Ryba denna o spokojnym usposobieniu i dużym apetycie.",
+    long_description:
+      "Sumik Płaskopyski (Pterodoras granulosus) to ryba denna pochodząca z dorzecza Amazonki. Dorasta do około 50 cm długości i jest znany ze swojego zrównoważonego charakteru. Idealny do dużych akwariów słodkowodnych, w których może swobodnie pływać i przeszukiwać dno w poszukiwaniu pożywienia. Jest łatwy w hodowli, ale wymaga odpowiednio dużego zbiornika oraz pokarmu w formie tabletek lub żywego.",
+    price: 249.99,
+    image:
+      "https://a.allegroimg.com/original/1140b4/35030aae4c1bada6eccd7c2f879d/Sum-plaskopyski-Pseudoplatystoma-fasciatum",
+    tags: ["Ryby", "Denne", "Słodkowodne", "Zwierzęta", "Amazonka"],
+  },
+  {
     id: 100,
     name: "Terrarium dla Węży",
     description: "Szklane terrarium idealne dla węży i innych gadów.",
@@ -342,7 +401,7 @@ const items = [
     ],
   },
   {
-    id: 103,
+    id: 70,
     name: "Karma dla Płazów - Tropical",
     description: "Specjalistyczna karma dla żab, salamandr i innych płazów.",
     long_description:
@@ -382,6 +441,126 @@ const items = [
       "Dekoracje",
       "Precyzyjne",
     ],
+  },
+  {
+    id: 71,
+    name: "Karma dla Rybek Tropikalnych",
+    description: "Pełnowartościowa karma dla ryb tropikalnych.",
+    long_description:
+      "Specjalistyczna karma przeznaczona dla ryb tropikalnych, takich jak neonki, skalary czy gurami. Formuła wzbogacona o białka, witaminy i minerały wspiera zdrowie, piękne kolory i witalność ryb. Granulki są łatwe do spożycia i powoli opadają na dno, co zapewnia dostęp dla ryb żerujących na różnych poziomach akwarium.",
+    price: 29.99,
+    image:
+      "https://img1.imcages.com/1955-large_default/hikari-micro-pellets-karma-wolno-opadajacy-pokarm-dla-ryb-tropikalnych.jpg",
+    tags: [
+      "Karma",
+      "Ryby",
+      "Tropikalne",
+      "Akwaria",
+      "Pokarm",
+      "Zdrowie",
+      "Kolory",
+    ],
+  },
+  {
+    id: 106,
+    name: "Lampa UVB do Terrarium",
+    description: "Lampa UVB wspomagająca zdrowie gadów i płazów.",
+    long_description:
+      "Lampa UVB to kluczowy element wyposażenia terrarium, wspierający syntezę witaminy D3 u gadów i płazów, co pozwala na zdrowy rozwój kości i skóry. Urządzenie jest łatwe w montażu i pasuje do większości standardowych opraw. Emituje światło naśladujące naturalne promieniowanie słoneczne, co jest szczególnie istotne dla zwierząt hodowanych w terrariach bez dostępu do światła dziennego.",
+    price: 89.99,
+    image:
+      "https://img3.imcages.com/889-large_default/zestaw-lampa-do-terrarium-arcadia-pro-t5-uvb-kit-swietlowka-uv-24w-39w-54w.jpg",
+    tags: [
+      "Akcesoria",
+      "Terraria",
+      "Gady",
+      "Płazy",
+      "Zdrowie",
+      "Światło UVB",
+      "Synteza D3",
+    ],
+  },
+  {
+    id: 107,
+    name: "Dekoracja do Akwarium - Wrak Statku",
+    description: "Realistyczna dekoracja do akwarium w formie wraku statku.",
+    long_description:
+      "Dekoracja do akwarium w formie wraku statku to doskonały sposób na urozmaicenie wyglądu zbiornika. Wykonana z materiałów bezpiecznych dla ryb, jest odporna na działanie wody i nie wpływa na parametry chemiczne. Wrak zapewnia rybom miejsce do ukrycia się, co pomaga zmniejszyć stres. Detale, takie jak muszle i koralowce, dodają realistycznego wyglądu.",
+    price: 69.99,
+    image:
+      "https://a.allegroimg.com/original/112b9e/6aa5efd24a0ca6918aa5ae28c4a6/OZDOBA-DEKORACJA-DO-AKWARIUM-WRAK-STATKU-25x9x17cm-AQUA-NOVA",
+    tags: [
+      "Dekoracje",
+      "Akwaria",
+      "Ryby",
+      "Zwierzęta",
+      "Bezpieczne",
+      "Estetyczne",
+    ],
+  },
+  {
+    id: 72,
+    name: "Karma dla Gekonów",
+    description: "Wysokobiałkowa karma dla gekonów.",
+    long_description:
+      "Specjalna karma w formie żelowych saszetek lub proszku, dedykowana dla gekonów owocożernych i owadożernych. Zawiera naturalne składniki, witaminy i minerały wspierające zdrowie skóry, oczu oraz ogólną witalność. Idealna jako podstawowe pożywienie lub uzupełnienie diety.",
+    price: 39.99,
+    image:
+      "https://a.allegroimg.com/s512/11e5db/9756bc764e15919976dc1dfe3137/Karma-dla-gekona-Gecko-nutrition-banan-50g",
+    tags: ["Karma", "Gady", "Gekony", "Zdrowie", "Białko"],
+  },
+  {
+    id: 109,
+    name: "Terrarium 60x45x45 cm",
+    description: "Uniwersalne terrarium średniej wielkości.",
+    long_description:
+      "Terrarium o wymiarach 60x45x45 cm wykonane z wytrzymałego szkła hartowanego. Wyposażone w system wentylacji oraz bezpieczne zamknięcie. Idealne dla małych węży, gekonów, płazów czy pająków. Posiada opcję montażu lampy UVB i dekoracji.",
+    price: 299.99,
+    image: "https://cdn.invital.pl/upload/31524-0806374422.jpg",
+    tags: ["Terraria", "Gady", "Płazy", "Bezpieczne", "Wentylacja"],
+  },
+  {
+    id: 110,
+    name: "Akwarium 120 L",
+    description: "Przestronne akwarium dla ryb słodkowodnych.",
+    long_description:
+      "Akwarium o pojemności 120 litrów, idealne dla średniej wielkości ryb słodkowodnych, takich jak pielęgnice, skalary czy sumiki. Wykonane z wysokiej jakości szkła z polerowanymi krawędziami. Zawiera system filtracji, oświetlenie LED oraz opcję montażu dodatkowych akcesoriów.",
+    price: 789.99,
+    image:
+      "https://a.allegroimg.com/original/114aa1/fdc7e3174e2b9fcc5e6f586f4262/Juwel-Lido-120l-61x41x58cm-Zestaw-Akwarium-Czarne",
+    tags: ["Akwaria", "Ryby", "Słodkowodne", "Filtracja", "Oświetlenie"],
+  },
+  {
+    id: 111,
+    name: "Dekoracja do Terrarium - Skały",
+    description: "Syntetyczne skały do terrarium.",
+    long_description:
+      "Realistycznie wyglądające skały wykonane z lekkiego, nietoksycznego materiału. Idealne jako element wystroju terrarium dla jaszczurek, węży czy żółwi. Skały można łatwo dopasować do innych elementów dekoracyjnych i są odporne na wilgoć oraz zmiany temperatury.",
+    price: 49.99,
+    image:
+      "https://a.allegroimg.com/original/110bdc/975a16094c7bb522ff52f655c457/TRIXIE-DEKORACJA-TERRARIUM-SKALA-NAROZNA-16cm76194",
+    tags: ["Dekoracje", "Terraria", "Akwaria", "Estetyczne", "Wytrzymałe"],
+  },
+  {
+    id: 73,
+    name: "Karma dla Węży",
+    description: "Mrożone gryzonie dla węży.",
+    long_description:
+      "Mrożone myszy i szczury dedykowane jako karma dla węży takich jak pytony czy boa. Produkty są starannie selekcjonowane i pakowane w sposób zachowujący świeżość. Stanowią pełnowartościowe źródło białka dla gadów. Dostępne w różnych rozmiarach, dopasowanych do wieku i gatunku węża.",
+    price: 59.99,
+    image:
+      "https://assets.petco.com/petco/image/upload/f_auto,q_auto/3439473-center-1",
+    tags: ["Karma", "Węże", "Białko", "Mrożonki"],
+  },
+  {
+    id: 113,
+    name: "Akwarium 30 L Nano",
+    description: "Małe akwarium dla początkujących.",
+    long_description:
+      "Nano akwarium o pojemności 30 litrów, idealne dla małych gatunków ryb, krewetek czy roślin wodnych. Kompaktowe wymiary czynią je odpowiednim dla małych przestrzeni, a wbudowane oświetlenie LED zapewnia optymalne warunki wzrostu dla roślin.",
+    price: 159.99,
+    image: "https://cdn.invital.pl/upload_pl/32930-0807294315.jpg",
+    tags: ["Akwaria", "Nano", "Ryby", "Krewetki", "Rośliny", "LED"],
   },
 ];
 
