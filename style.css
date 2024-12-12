@@ -431,7 +431,11 @@ footer {
   z-index: -1000;
 }
 
-
+footer a, footer a:active, footer a:hover, footer a:visited
+{
+	text-decoration: underline;
+	color: white;
+}
 
 /*
 .card {

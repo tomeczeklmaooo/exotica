@@ -123,7 +123,7 @@ class ExoticaFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <footer>
-        <p>&copy; Copyright 2024 Exotica</p>
+        <p>&copy; Copyright 2024 Exotica<br><a href="https://github.com/tomeczeklmaooo/exotica">Repozytorium GitHub</a></p>
         </footer>
     `;
   }
