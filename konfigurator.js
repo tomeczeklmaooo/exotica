@@ -9,6 +9,7 @@ let cave_amt = 0;
 let wood_amt = 0;
 let palm_amt = 0;
 let grass_amt = 0;
+let castle_amt = 0;
 let accessories = [];
 
 function update_display() {
@@ -19,6 +20,7 @@ function update_display() {
     document.getElementById('wood_amt').innerText = wood_amt;
     document.getElementById('palm_amt').innerText = palm_amt;
     document.getElementById('grass_amt').innerText = grass_amt;
+    document.getElementById('castle_amt').innerText = castle_amt;
     terrarium_size();
 	terrain_img();
 	var tekst = document.getElementById('text_grawer').value;
@@ -64,7 +66,7 @@ function terrain_img() {
             img_url = 'img/podloze.png';
             break;
         case 'gravel':
-            img_url = 'img/podloze.png';;
+            img_url = 'img/zwirek.png';;
             break;
         case 'grass':
             img_url = 'img/dirt.png';;
@@ -222,6 +224,27 @@ document.getElementById('remove_grass').addEventListener('click', function() {
         grass_amt--;
         update_display();
         remove_dodatek('grass');
+    }
+});
+
+document.getElementById('add_castle').addEventListener('click', function() {
+    castle_amt++;
+    if (castle_amt <= dodatek_limit_li)
+	{
+		update_display();
+		create_dodatek('castle');
+	}
+	else
+	{
+		castle_amt = dodatek_limit_li;
+	}
+});
+
+document.getElementById('remove_castle').addEventListener('click', function() {
+    if (castle_amt > 0) {
+        castle_amt--;
+        update_display();
+        remove_dodatek('castle');
     }
 });
 

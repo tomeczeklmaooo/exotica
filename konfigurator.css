@@ -165,6 +165,14 @@ select, input[type="text"], input[type="button"]
 	height: 100px;
 }
 
+.add-on.castle
+{
+	background-image: url('img/zamek.png');
+	background-size: cover;
+	width: 300px;
+	height: 200px;
+}
+
 .accessory-list {
 	margin-bottom: 20px;
 	display: flex;
