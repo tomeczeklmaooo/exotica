@@ -1,3 +1,11 @@
+.game
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .game-state-var
 {
 	display: flex;
@@ -7,8 +15,7 @@
 	justify-content: center;
 	padding: 15px 0;
 	font-size: 14pt;
-	background: #0000002f;
-	color: #ffffff;
+	color: var(--text);
 	border-radius: 4px;
 }
 
@@ -20,9 +27,10 @@
 
 .main-button
 {
+	transform: scale(0.8);
 	transition: 0.15s ease;
 }
 .main-button:active
 {
-	transform: scale(0.96);
+	transform: scale(0.76);
 }

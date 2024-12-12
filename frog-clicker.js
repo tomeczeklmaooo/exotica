@@ -1,10 +1,8 @@
 var cvars = {
 	clicks: 0,
-	experience: 0,
-	experience_required: 100,
-	experience_total: 0,
-	level: 1,
-	level_multiplier: 2.4
+	points: 0,
+	points_goal: 100,
+	points_not_reached: true
 };
 
 function randomint(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
@@ -14,28 +12,33 @@ function clicker_handler()
 	cvars.clicks++;
 	if ((cvars.clicks % 5) == 0)
 	{
-		cvars.experience += randomint(1, 6);
+		var random_point_amount = randomint(1, 6);
+		if (cvars.points_goal - cvars.points < random_point_amount) cvars.points += (cvars.points_goal - cvars.points);
+		else cvars.points += random_point_amount;
+		cvars.points_not_reached = true;
 	}
-	if (cvars.experience >= cvars.experience_required)
+	if (cvars.points == cvars.points_goal && cvars.points_not_reached)
 	{
-		cvars.level++;
-		cvars.experience_total += cvars.experience;	
-		cvars.experience = 0;
-		cvars.experience_required = Math.floor(cvars.experience_required * cvars.level_multiplier);
+		reward();
+		cvars.points_goal += 100;
+		cvars.points_not_reached = false;
 	}
+}
+
+function reward()
+{
+	var rcontainer = document.getElementById('reward');
+	rcontainer.innerHTML = `<b>Nagroda:</b> ${randomint(30, 80)} punktów EXOTICA za zdobycie ${cvars.points} punktów!`;
 }
 
 function display()
 {
-	var elClicks = document.getElementById('clicks');
-	var elExperience = document.getElementById('experience');
-	var elLevel = document.getElementById('level');
+	var clicks_span = document.getElementById('clicks');
+	var points_span = document.getElementById('points');
 
-	elClicks.innerHTML = `Clicks:<br>${cvars.clicks}`;
+	clicks_span.innerHTML = `<b>Kliknięcia:</b><br>${cvars.clicks}`;
 
-	elExperience.innerHTML = `Experience:<br>${cvars.experience}/${cvars.experience_required}`;
-
-	elLevel.innerHTML = `Level:<br>${cvars.level}`;
+	points_span.innerHTML = `<b>Punkty:</b><br>${cvars.points}`;
 
 	setTimeout(display, 100);
 }

@@ -20,20 +20,24 @@
 	<exotica-header></exotica-header>
 
 	<div class="content centered-content">
-        
+        <div style="text-align: center;">
+			<h1>FROG CLICKER</h1>
+		</div>
         
         <main>
+			
             
             <div class="game">
 				<div class="game-state-var prevent-select">
-					<div id="clicks" class="game-state-var-box">Clicks: %s</div>
-					<div id="experience" class="game-state-var-box">Experience: %s</div>
-					<div id="level" class="game-state-var-box">Level: %s</div>
+					<div id="clicks" class="game-state-var-box">Kliknięcia: %s</div>
+					<div id="points" class="game-state-var-box">Punkty: %s</div>
 				</div>
 
                 <div class="main-button" onclick="clicker_handler()">
 					<img src="img/frog.png" alt="placeholder image" width="250px">
 				</div>
+
+				<div id="reward">Nagroda: &lt;brak&gt;</div>
             </div>
             
 		</main>
